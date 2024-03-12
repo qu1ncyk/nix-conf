@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.file.".config/nvim".source = ./.;
   programs.neovim.enable = true;
   home.packages = with pkgs; [

@@ -8,26 +8,32 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, unstable-nixpkgs, home-manager, ... }:
-  let
-    system =  "x86_64-linux";
-  in
-  {
+  outputs = {
+    self,
+    nixpkgs,
+    unstable-nixpkgs,
+    home-manager,
+    ...
+  }: let
+    system = "x86_64-linux";
+  in {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ];
+        modules = [./configuration.nix];
       };
     };
 
     homeConfigurations = {
       quincy = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
-        modules = [ ./home.nix ];
+        modules = [./home.nix];
         extraSpecialArgs = {
           unstable-pkgs = unstable-nixpkgs.legacyPackages.${system};
         };
       };
     };
+
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
   };
 }

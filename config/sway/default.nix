@@ -1,6 +1,8 @@
-{ pkgs, unstable-pkgs, ... }:
-
 {
+  pkgs,
+  unstable-pkgs,
+  ...
+}: {
   home.file.".config/sway".source = ./.;
   home.packages = with pkgs; [
     unstable-pkgs.wl-gammarelay-rs
