@@ -78,9 +78,7 @@ exec eval `ssh-agent -a /tmp/ssh-agent.socket`
 exec swaybg -i ~/.config/sway/background.png
 gaps inner 10
 
-workspace 10
 exec $term -e ~/.config/sway/boot.sh
-workspace 1
 
 ### Output configuration
 #
