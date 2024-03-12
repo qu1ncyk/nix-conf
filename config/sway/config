@@ -36,24 +36,11 @@ input "type:keyboard" {
 font pango: Ubuntu regular 12
 
 # Add volume control
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioLowerVolume exec pactl set-sink-mute @DEFAULT_SINK@ false \
-    && pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioRaiseVolume exec pactl set-sink-mute @DEFAULT_SINK@ false \
-    && pactl set-sink-volume @DEFAULT_SINK@ +5%
-
-mode "microphone" {
-    bindsym XF86AudioMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    bindsym XF86AudioLowerVolume exec pactl set-source-mute @DEFAULT_SOURCE@ false \
-        && pactl set-source-volume @DEFAULT_SOURCE@ -5%
-    bindsym XF86AudioRaiseVolume exec pactl set-source-mute @DEFAULT_SOURCE@ false \
-        && pactl set-source-volume @DEFAULT_SOURCE@ +5%
-
-    # Return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+m mode "microphone"
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec wpctl set-mute @DEFAULT_SINK@ 0 \
+    && wpctl set-volume @DEFAULT_SINK@ 5%-
+bindsym XF86AudioRaiseVolume exec wpctl set-mute @DEFAULT_SINK@ 0 \
+    && wpctl set-volume @DEFAULT_SINK@ 5%+
 
 # Add brigthness control
 bindsym XF86MonBrightnessUp exec ~/.config/sway/brighter
@@ -78,7 +65,7 @@ exec eval `ssh-agent -a /tmp/ssh-agent.socket`
 exec swaybg -i ~/.config/sway/background.png
 gaps inner 10
 
-exec $term -e ~/.config/sway/boot.sh
+exec ~/.config/sway/boot.sh
 
 ### Output configuration
 #

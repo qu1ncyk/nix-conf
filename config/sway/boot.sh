@@ -2,7 +2,7 @@
 swaymsg workspace 10
 
 safeeyes &
-wl-gammarelay-rs &
+wl-gammarelay-rs run &
 ~/.config/sway/blue-filter &
 syncthing --no-browser &
 nm-applet --no-agent &
