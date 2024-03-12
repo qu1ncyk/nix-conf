@@ -1,0 +1,20 @@
+#!/bin/sh
+
+filename="$HOME/Pictures/Screenshots/Screenshot from $(date "+%Y-%m-%d %H-%M-%S").png"
+
+selected=$(echo "save area
+save screen
+save window
+copy area
+copy screen
+copy window" | wofi --dmenu)
+
+case $selected in
+    "save screen") grimshot save screen "$filename";;
+    "save window") grimshot save active "$filename";;
+    "save area") grimshot save area "$filename";;
+
+    "copy screen") grimshot copy screen;;
+    "copy window") grimshot copy active;;
+    "copy area") grimshot copy area;;
+esac

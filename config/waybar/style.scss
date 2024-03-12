@@ -1,0 +1,269 @@
+@use "sass:color";
+
+@mixin shadow-border($color: white) {
+  box-shadow: 0 -1px 6px 4px color.scale($color, $lightness: 20%, $saturation:
+        30%);
+}
+
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}
+
+window#waybar {
+  background-color: rgba(43, 48, 59, 0.3);
+  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+  background-color: #3f3f3f;
+}
+
+window#waybar.chromium {
+  background-color: #000000;
+  border: none;
+}
+
+button {
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+  background: inherit;
+  box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+  background-color: #64727d;
+  box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#mode {
+  background-color: #64727d;
+  border-bottom: 3px solid #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd,
+#keyboard-state > label {
+  padding: 0 7px;
+  color: #ffffff;
+  margin: 6px 0;
+}
+
+#window,
+#workspaces {
+  margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#clock {
+  @include shadow-border(#64727d);
+}
+
+#battery {
+  @include shadow-border(#ffffff);
+}
+
+#battery.charging,
+#battery.plugged {
+  color: #ffffff;
+  @include shadow-border(#26a65b);
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#cpu {
+  @include shadow-border(#2ecc71);
+}
+
+#memory {
+  @include shadow-border(#9b59b6);
+}
+
+#disk {
+  @include shadow-border(#964b00);
+}
+
+#backlight {
+  @include shadow-border(#90b1b1);
+}
+
+#network {
+  @include shadow-border(#2980b9);
+}
+
+#network.disconnected {
+  @include shadow-border(#f53c3c);
+}
+
+#pulseaudio {
+  @include shadow-border(#f1c40f);
+}
+
+#pulseaudio.muted {
+  @include shadow-border(#90b1b1);
+}
+
+#wireplumber {
+  @include shadow-border(#fff0f5);
+  color: #000000;
+}
+
+#wireplumber.muted {
+  @include shadow-border(#f53c3c);
+}
+
+#custom-media {
+  @include shadow-border(#66cc99);
+  color: #2a5c45;
+  min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+  @include shadow-border(#66cc99);
+}
+
+#custom-media.custom-vlc {
+  @include shadow-border(#ffa000);
+}
+
+#temperature {
+  @include shadow-border(#f0932b);
+}
+
+#temperature.critical {
+  @include shadow-border(#eb4d4b);
+}
+
+#tray {
+  @include shadow-border(#2980b9);
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  @include shadow-border(#eb4d4b);
+}
+
+#idle_inhibitor {
+  @include shadow-border(#ecf0f1);
+  border-radius: 99px 0 0 99px;
+  margin-left: 5px;
+}
+
+#idle_inhibitor.activated {
+  background-color: #ecf0f1;
+  color: black;
+}
+
+#mpd {
+  @include shadow-border(#66cc99);
+  color: #2a5c45;
+}
+
+#mpd.disconnected {
+  @include shadow-border(#f53c3c);
+}
+
+#mpd.stopped {
+  @include shadow-border(#90b1b1);
+}
+
+#mpd.paused {
+  @include shadow-border(#51a37a);
+}
+
+#keyboard-state > label {
+  @include shadow-border(#97e1ad);
+}
+
+#keyboard-state > label.locked {
+  background: #97e1ad;
+  color: black;
+}
+
+#scratchpad {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+  background-color: transparent;
+}

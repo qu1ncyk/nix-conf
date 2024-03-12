@@ -1,0 +1,6 @@
+[user]
+	signingkey = 75BF0BAAD56015FC
+	email = 67159014+qu1ncyk@users.noreply.github.com
+	name = Quincy
+[commit]
+	gpgsign = true

@@ -1,0 +1,39 @@
+#!/bin/sh
+
+coords="52N 5E"
+temp_day=6500
+temp_night=3500
+transition_dur=900
+
+dayloop() {
+    busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q $temp_day
+    while [[ `sunwait poll $coords` == "DAY" ]]; do
+        sleep 300
+    done
+}
+
+nightloop() {
+    busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q $temp_night
+    while [[ `sunwait poll $coords` == "NIGHT" ]]; do
+        sleep 300
+    done
+}
+
+transition() {
+    for i in `seq 1 100`; do
+        sleep $(($transition_dur / 100))
+        busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n $(($1 / 100))
+    done
+}
+
+while true; do
+    case `sunwait poll $coords` in
+        "DAY")
+            dayloop
+            transition $(($temp_night - $temp_day));;
+
+        "NIGHT")
+            nightloop
+            transition $(($temp_day - $temp_night));;
+    esac
+done
