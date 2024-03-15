@@ -33,7 +33,6 @@
     safeeyes
     syncthing
     thunderbird
-    tridactyl-native
     wget
     wl-clipboard
     wl-clipboard-x11
@@ -90,6 +89,7 @@
     # EDITOR = "emacs";
   };
 
+  home.file.".mozilla/native-messaging-hosts/tridactyl.json".source = "${pkgs.tridactyl-native}/lib/mozilla/native-messaging-hosts/tridactyl.json";
   programs = {
     alacritty = {
       enable = true;
