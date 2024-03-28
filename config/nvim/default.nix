@@ -24,7 +24,7 @@
       ts-context-commentstring.enable = true;
       which-key.enable = true;
 
-      nvim-cmp.enable = true;
+      cmp.enable = true;
       cmp-buffer.enable = true;
       cmp-path.enable = true;
       cmp-cmdline.enable = true;

@@ -1,11 +1,7 @@
-{
-  pkgs,
-  unstable-pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.file.".config/sway".source = ./.;
   home.packages = with pkgs; [
-    unstable-pkgs.wl-gammarelay-rs
+    wl-gammarelay-rs
     sunwait
     sway
     swaybg
