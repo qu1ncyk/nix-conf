@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgs-mozilla,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "quincy";
@@ -32,7 +36,7 @@
     playerctl
     safeeyes
     syncthing
-    thunderbird
+    pkgs-mozilla.thunderbird
     wget
     wl-clipboard
     wl-clipboard-x11
@@ -101,7 +105,7 @@
     bashmount.enable = true;
     firefox = {
       enable = true;
-      package = pkgs.firefox-devedition;
+      package = pkgs-mozilla.firefox-devedition;
     };
     wofi.enable = true;
   };
