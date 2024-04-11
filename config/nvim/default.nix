@@ -22,6 +22,7 @@
       telescope.enable = true;
       toggleterm.enable = true;
       ts-context-commentstring.enable = true;
+      typst-vim.enable = true;
       which-key.enable = true;
 
       cmp.enable = true;
@@ -56,6 +57,7 @@
           };
           svelte.enable = true;
           tsserver.enable = true;
+          typst-lsp.enable = true;
         };
       };
 
@@ -88,6 +90,7 @@
           "svelte"
           "toml"
           "typescript"
+          "typst"
         ];
       };
     };
