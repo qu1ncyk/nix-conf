@@ -121,3 +121,5 @@ set cleaner ctpvclear
 &ctpvquit $id
 
 map gs :cd ~/school
+
+set relativenumber
