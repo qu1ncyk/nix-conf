@@ -95,7 +95,8 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #mpd,
-#keyboard-state > label {
+#keyboard-state > label,
+#custom-speed {
   padding: 0 7px;
   color: #ffffff;
   margin: 6px 0;
@@ -163,7 +164,7 @@ button:hover {
   @include shadow-border(#90b1b1);
 }
 
-#network {
+#network, #custom-speed {
   @include shadow-border(#2980b9);
 }
 
