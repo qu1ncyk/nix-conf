@@ -18,11 +18,11 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   imports = [
-    config/git.nix
-    config/lf.nix
-    config/nvim
-    config/sway
-    config/waybar
+    user/git.nix
+    user/lf.nix
+    user/nvim
+    user/sway
+    user/waybar
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -111,7 +111,7 @@
   };
 
   xdg.enable = true;
-  home.file.".XCompose".source = config/XCompose;
+  home.file.".XCompose".source = user/XCompose;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
