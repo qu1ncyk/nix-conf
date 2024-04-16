@@ -1,6 +1,10 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    sddm-chili-theme
+    (sddm-chili-theme.override {
+      themeConfig = {
+        background = toString ../user/sway/background.png;
+      };
+    })
   ];
 
   services.xserver = {
