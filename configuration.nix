@@ -92,6 +92,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     brightnessctl
+    sddm-chili-theme
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -118,6 +119,14 @@
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
+  };
+  services.xserver = {
+    enable = true;
+    displayManager.sddm = {
+      enable = true;
+      theme = "chili";
+      wayland.enable = true;
+    };
   };
 
   # List services that you want to enable:
