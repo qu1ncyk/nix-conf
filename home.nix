@@ -31,7 +31,9 @@
     dunst
     gimp
     keepassxc
+    libreoffice
     networkmanagerapplet
+    p7zip
     pavucontrol
     playerctl
     safeeyes
@@ -107,6 +109,7 @@
       enable = true;
       package = pkgs-mozilla.firefox-devedition;
     };
+    imv.enable = true;
     wofi.enable = true;
   };
 
