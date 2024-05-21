@@ -14,7 +14,7 @@ in {
           "idle_inhibitor"
           "pulseaudio"
           "network"
-          "custom/speed"
+          # "custom/speed"
           "cpu"
           "memory"
           "temperature"
@@ -105,10 +105,10 @@ in {
           };
           on-click = "pavucontrol";
         };
-        "custom/speed" = {
-          interval = 120;
-          exec = "${pkgs.callPackage ./speed.nix {}}/bin/speed";
-        };
+        # "custom/speed" = {
+        #   interval = 120;
+        #   exec = "${pkgs.callPackage ./speed.nix {}}/bin/speed";
+        # };
       }
     ];
   };

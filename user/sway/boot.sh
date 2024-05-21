@@ -6,6 +6,7 @@ wl-gammarelay-rs run &
 ~/.config/sway/blue-filter &
 syncthing --no-browser &
 nm-applet --no-agent &
+blueman-applet &
 keepassxc &
 
 sleep 1

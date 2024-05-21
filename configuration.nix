@@ -6,7 +6,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     system/sddm.nix
-    system/dnscrypt.nix
+    # system/dnscrypt.nix
   ];
 
   # Bootloader.
@@ -22,6 +22,14 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  hardware.bluetooth = {
+    enable = true;
+    settings.General = {
+      Enable = "Source,Sink,Media,Socket";
+    };
+  };
+  services.blueman.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
