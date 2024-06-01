@@ -7,12 +7,9 @@
     })
   ];
 
-  services.xserver = {
+  services.displayManager.sddm = {
     enable = true;
-    displayManager.sddm = {
-      enable = true;
-      theme = "chili";
-      wayland.enable = true;
-    };
+    theme = "chili";
+    wayland.enable = true;
   };
 }
