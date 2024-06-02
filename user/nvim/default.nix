@@ -11,6 +11,8 @@
     extraPackages = with pkgs; [
       python311Packages.autopep8
       python311Packages.flake8
+      # Needed for rust-analyzer
+      gcc
     ];
     plugins = {
       barbar.enable = true;
