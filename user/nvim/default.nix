@@ -42,6 +42,7 @@
         preConfig = "require('neodev').setup {}";
         servers = {
           clangd.enable = true;
+          cssls.enable = true;
           emmet_ls.enable = true;
           html.enable = true;
           jsonls.enable = true;
