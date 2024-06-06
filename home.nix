@@ -42,6 +42,7 @@
     wget
     wl-clipboard
     wl-clipboard-x11
+    wl-mirror
     unzip
     xdg-utils
     zip
