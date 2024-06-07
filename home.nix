@@ -21,6 +21,7 @@
     user/git.nix
     user/lf.nix
     user/nvim
+    user/retroarch.nix
     user/sway
     user/waybar
   ];
