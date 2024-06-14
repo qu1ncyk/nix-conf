@@ -4,3 +4,5 @@
 	name = Quincy
 [commit]
 	gpgsign = true
+[merge]
+	ff = no
