@@ -43,12 +43,12 @@
         servers = {
           clangd.enable = true;
           cssls.enable = true;
-          emmet_ls.enable = true;
+          emmet-ls.enable = true;
           html.enable = true;
           jsonls.enable = true;
           lua-ls.enable = true;
           # marksman.enable = true;
-          nil_ls = {
+          nil-ls = {
             enable = true;
             extraOptions.nix.flake.autoArchive = true;
           };
