@@ -77,6 +77,7 @@
       #   enableSSHSupport = true;
     };
     sway.enable = true;
+    steam.enable = true;
   };
 
   security.rtkit.enable = true;
