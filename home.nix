@@ -16,7 +16,7 @@
   imports = [
     user/git.nix
     user/lf.nix
-    user/nvim
+    user/nixvim
     user/retroarch.nix
     user/sway
     user/waybar
