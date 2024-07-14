@@ -4,7 +4,7 @@ local wk = require("which-key")
 wk.setup({})
 
 wk.add({
-  { "<leader>/",  ":CommentToggle<CR>",        desc = "Comment toggle" },
+  { "<leader>/",  "gcc",                       desc = "Comment toggle",      noremap = false },
   { "<leader>b",  ":Telescope buffers<CR>",    desc = "Telescope buffers" },
   { "<leader>dd", vim.diagnostic.open_float,   desc = "Diagnostics" },
   { "<leader>dj", vim.diagnostic.goto_prev,    desc = "Next diagnostic" },
@@ -22,9 +22,9 @@ wk.add({
 wk.add({
   {
     mode = { "v" },
-    { "<leader>/", ":CommentToggle<CR>", desc = "Toggle comment" },
-    { "<leader>j", ":m '>+1<CR>gv=gv",   desc = "Move lines down" },
-    { "<leader>k", ":m '<-2<CR>gv=gv",   desc = "Move lines up" },
+    { "<leader>/", "gc",               desc = "Toggle comment", noremap = false },
+    { "<leader>j", ":m '>+1<CR>gv=gv", desc = "Move lines down" },
+    { "<leader>k", ":m '<-2<CR>gv=gv", desc = "Move lines up" },
   },
 })
 

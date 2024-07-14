@@ -153,15 +153,6 @@
       },
       "fetcher": "fetchFromGitHub"
     },
-    "nvim-comment": {
-      "args": {
-        "hash": "sha256-O2jhrjXxKaWHMfm3YJ9+92Onm0niEHfUp5kOh2gETuc=",
-        "owner": "terrortylor",
-        "repo": "nvim-comment",
-        "rev": "e9ac16ab056695cad6461173693069ec070d2b23"
-      },
-      "fetcher": "fetchFromGitHub"
-    },
     "nvim-lspconfig": {
       "args": {
         "hash": "sha256-eYtuIMptp4XCyneZHPcgvdt2gBVzrHjXOOrcF9IMqoA=",

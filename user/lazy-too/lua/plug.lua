@@ -133,7 +133,8 @@ return require("lazy").setup({
       local has_words_before = function()
         unpack = unpack or table.unpack
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+        return col ~= 0
+            and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
       end
 
       opts.sources = opts.sources or {}
@@ -300,16 +301,11 @@ return require("lazy").setup({
     event = "VeryLazy",
   },
   {
-    "terrortylor/nvim-comment",
-    dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
-    cmd = "CommentToggle",
-    config = function()
-      require("nvim_comment").setup({
-        hook = function()
-          require("ts_context_commentstring.internal").update_commentstring()
-        end,
-      })
-    end,
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    event = "InsertEnter",
+    opts = {
+      enable_autocmd = false,
+    },
   },
   {
     "romgrk/barbar.nvim",
@@ -332,9 +328,6 @@ return require("lazy").setup({
     main = "nvim-treesitter.configs",
     opts = {
       highlight = {
-        enable = true,
-      },
-      context_commentstring = {
         enable = true,
       },
     },
