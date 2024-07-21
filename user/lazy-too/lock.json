@@ -119,10 +119,10 @@
     },
     "mini.icons": {
       "args": {
-        "hash": "sha256-ki+1xp3GZcsA08PFT4lbywdZgcbudJv9t8mrRsCLrcM=",
+        "hash": "sha256-sCVahHVz72pYLbcc8VocmxaWnyV9gapNXGuK550ksMk=",
         "owner": "echasnovski",
         "repo": "mini.icons",
-        "rev": "c291191e2a2a99f8aeea5e4d6406af54d11c9608"
+        "rev": "352a25dce86c41ab9fe854dd37f60c36ea7048df"
       },
       "fetcher": "fetchFromGitHub"
     },
@@ -137,10 +137,10 @@
     },
     "none-ls.nvim": {
       "args": {
-        "hash": "sha256-lGvYZtT0uu7ifd5ToV2tB+1FMK3C2SBkpJKwfUtcKVk=",
+        "hash": "sha256-LlpeG81nv80R5bi6FTxuw8d7kj5khwK3MP15reWh16M=",
         "owner": "nvimtools",
         "repo": "none-ls.nvim",
-        "rev": "8b5d4170a602d7b257704eef77b0539ddfd02589"
+        "rev": "2cde745aadc2c36f6860a77a556494870675771a"
       },
       "fetcher": "fetchFromGitHub"
     },
@@ -164,19 +164,19 @@
     },
     "nvim-lspconfig": {
       "args": {
-        "hash": "sha256-ibXxWcrx7eDLKR3cQRA1A8M83arAm/jRApPnwP+5ork=",
+        "hash": "sha256-H2mSdbQ+9LkAOLXJ/MaT/0RNZ57EjQcGTtgu+HEJrnI=",
         "owner": "neovim",
         "repo": "nvim-lspconfig",
-        "rev": "df9c116cbcf0aa7e58f2b36b0296fa687e87f36f"
+        "rev": "1ea7c6126a1aa0121098e4f16c04d5dde1a4ba22"
       },
       "fetcher": "fetchFromGitHub"
     },
     "nvim-tree.lua": {
       "args": {
-        "hash": "sha256-0p6kz1/LZoIPRMmwpBjq/diP5fia4viQajuxQSHUe4M=",
+        "hash": "sha256-n/zFNRCH3hwaV1iFcVUkuVRZtaxJSY4tQNrtNWCmxis=",
         "owner": "nvim-tree",
         "repo": "nvim-tree.lua",
-        "rev": "f9ff00bc06d7cb70548a3847d7a2a05e928bc988"
+        "rev": "4e396b26244444c911b73e9f2f40ae0115351fd1"
       },
       "fetcher": "fetchFromGitHub"
     },
@@ -191,10 +191,10 @@
     },
     "nvim-web-devicons": {
       "args": {
-        "hash": "sha256-j/B/E1VltJ/QpVFtDKAdVC4+KZ5Mz8dQP5kd8HIHjLs=",
+        "hash": "sha256-sa4Jlj0mn1xs3sI1VOeqLmPvigeNTZY44vBfxkinBc8=",
         "owner": "nvim-tree",
         "repo": "nvim-web-devicons",
-        "rev": "c0cfc1738361b5da1cd0a962dd6f774cc444f856"
+        "rev": "e612de3d3a41a6b7be47f51e956dddabcbf419d9"
       },
       "fetcher": "fetchFromGitHub"
     },
@@ -218,10 +218,10 @@
     },
     "telescope.nvim": {
       "args": {
-        "hash": "sha256-U6fgii9FlJy+bHAtYVnZEOyiUAqlBHTvMFc4mo+xS/s=",
+        "hash": "sha256-Hw2T/evnsPic+Jq0iO+myoGCVDPvqr/vFZXZbFBd3jo=",
         "owner": "nvim-telescope",
         "repo": "telescope.nvim",
-        "rev": "bfcc7d5c6f12209139f175e6123a7b7de6d9c18a"
+        "rev": "79552ef8488cb492e0f9d2bf3b4e808f57515e35"
       },
       "fetcher": "fetchFromGitHub"
     },
@@ -254,10 +254,10 @@
     },
     "which-key.nvim": {
       "args": {
-        "hash": "sha256-RsZFCHSJq0VI8NJRp2m89ot7+tskJy3BnXn5GT8AWmE=",
+        "hash": "sha256-hqxnA7LylOUCAgggf1cX0LcHudKFu/OgYmwWl49DC88=",
         "owner": "folke",
         "repo": "which-key.nvim",
-        "rev": "ed5f7622771d0b5c0ac3a5e286ec6cd17b6be131"
+        "rev": "c74c245d9277ad6865b28ea7e37158b7f990b7fe"
       },
       "fetcher": "fetchFromGitHub"
     }
