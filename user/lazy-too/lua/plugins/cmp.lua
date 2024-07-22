@@ -9,6 +9,7 @@ return {
       "hrsh7th/cmp-cmdline",
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
+      "petertriho/cmp-git",
     },
     event = { "InsertEnter", "CmdlineEnter" },
     config = function(_, opts)
@@ -106,5 +107,6 @@ return {
   {
     "petertriho/cmp-git",
     opts = {},
+    lazy = true,
   },
 }

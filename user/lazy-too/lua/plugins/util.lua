@@ -38,14 +38,28 @@ return {
   },
   { "nmac427/guess-indent.nvim", opts = {} },
   { "prichrd/netrw.nvim",        opts = {}, event = "VeryLazy" },
-  { "lewis6991/gitsigns.nvim",   opts = {}, cmd = "Gitsigns" },
+  { "lewis6991/gitsigns.nvim",   opts = {}, event = "VeryLazy" },
   {
     "zk-org/zk-nvim",
     opts = { picker = "telescope" },
-    config = function (_, opts)
+    config = function(_, opts)
       vim.env.ZK_NOTEBOOK_DIR = vim.fs.normalize("~/Sync/zk")
       require("zk").setup(opts)
     end,
-    event = "VeryLazy",
+    ft = "markdown",
+    cmd = {
+      "ZkBacklinks",
+      "ZkCd",
+      "ZkIndex",
+      "ZkInsertLink",
+      "ZkInsertLinkAtSelection",
+      "ZkLinks",
+      "ZkMatch",
+      "ZkNew",
+      "ZkNewFromContentSelection",
+      "ZkNewFromTitleSelection",
+      "ZkNotes",
+      "ZkTags",
+    },
   },
 }

@@ -2,6 +2,7 @@ local from_nix = require("lazy.from-nix")
 return {
   {
     "nvimtools/none-ls.nvim",
+    event = "VeryLazy",
     config = function()
       local null_ls = require("null-ls")
       local helpers = require("null-ls.helpers")
