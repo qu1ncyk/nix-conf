@@ -21,6 +21,7 @@
     user/retroarch.nix
     user/sway
     user/waybar
+    user/zk.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your

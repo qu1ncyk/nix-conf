@@ -117,6 +117,15 @@
       },
       "fetcher": "fetchFromGitHub"
     },
+    "markdown.nvim": {
+      "args": {
+        "hash": "sha256-YWcpS8K8ykAnC2qDXhl6kteSJ9pwxT4WXMqsFrwX7WM=",
+        "owner": "MeanderingProgrammer",
+        "repo": "markdown.nvim",
+        "rev": "123048b428eb85618780fcef9ea9f4d68b5d2508"
+      },
+      "fetcher": "fetchFromGitHub"
+    },
     "mini.icons": {
       "args": {
         "hash": "sha256-sCVahHVz72pYLbcc8VocmxaWnyV9gapNXGuK550ksMk=",
@@ -258,6 +267,15 @@
         "owner": "folke",
         "repo": "which-key.nvim",
         "rev": "c74c245d9277ad6865b28ea7e37158b7f990b7fe"
+      },
+      "fetcher": "fetchFromGitHub"
+    },
+    "zk-nvim": {
+      "args": {
+        "hash": "sha256-bABMcxruljXPBl/2H1CFf16fY7NM7EqKZUJdTbbkVuo=",
+        "owner": "zk-org",
+        "repo": "zk-nvim",
+        "rev": "15e24e96cb90889ebd12b5dbe800a958c716f520"
       },
       "fetcher": "fetchFromGitHub"
     }

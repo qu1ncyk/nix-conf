@@ -39,4 +39,13 @@ return {
   { "nmac427/guess-indent.nvim", opts = {} },
   { "prichrd/netrw.nvim",        opts = {}, event = "VeryLazy" },
   { "lewis6991/gitsigns.nvim",   opts = {}, cmd = "Gitsigns" },
+  {
+    "zk-org/zk-nvim",
+    opts = { picker = "telescope" },
+    config = function (_, opts)
+      vim.env.ZK_NOTEBOOK_DIR = vim.fs.normalize("~/Sync/zk")
+      require("zk").setup(opts)
+    end,
+    event = "VeryLazy",
+  },
 }
