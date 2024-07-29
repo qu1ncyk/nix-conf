@@ -2,7 +2,7 @@
   environment.systemPackages = with pkgs; [
     (sddm-chili-theme.override {
       themeConfig = {
-        background = toString ../user/sway/background.png;
+        background = "${../user/sway/background.png}";
       };
     })
   ];
