@@ -19,8 +19,8 @@ return {
         checked = { icon = " " },
       },
       bullet = {
-        icons = { '', '', '◆', '◇' },
-      }
+        icons = { "", "", "◆", "◇" },
+      },
     },
   },
   -- { 'mfussenegger/nvim-dap', opts = {} },

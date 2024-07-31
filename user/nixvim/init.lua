@@ -7,10 +7,8 @@ vim.g.mapleader = " "
 vim.g.localleader = "\\"
 
 -- IMPORTS
-require('vars') -- Variables
-require('opts') -- Options
-require('plug') -- Plugins
+require("vars") -- Variables
+require("opts") -- Options
+require("plug") -- Plugins
 
 -- PLUGINS: Add this section
-
-

@@ -11,7 +11,7 @@ return {
     },
     cmd = "NvimTreeToggle",
   },
-  { "windwp/nvim-autopairs",   opts = {}, event = "InsertEnter" },
+  { "windwp/nvim-autopairs", opts = {}, event = "InsertEnter" },
   {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
@@ -37,8 +37,8 @@ return {
     event = "VeryLazy",
   },
   { "nmac427/guess-indent.nvim", opts = {} },
-  { "prichrd/netrw.nvim",        opts = {}, event = "VeryLazy" },
-  { "lewis6991/gitsigns.nvim",   opts = {}, event = "VeryLazy" },
+  { "prichrd/netrw.nvim", opts = {}, event = "VeryLazy" },
+  { "lewis6991/gitsigns.nvim", opts = {}, event = "VeryLazy" },
   {
     "zk-org/zk-nvim",
     opts = { picker = "telescope" },
