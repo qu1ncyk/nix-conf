@@ -27,6 +27,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    bluetuith
     dunst
     gimp
     keepassxc
@@ -35,6 +36,8 @@
     p7zip
     pavucontrol
     playerctl
+    ripgrep
+    restic
     safeeyes
     syncthing
     thunderbird
