@@ -7,6 +7,7 @@
     ./hardware-configuration.nix
     system/sddm.nix
     # system/dnscrypt.nix
+    system/docker.nix
     system/network.nix
   ];
 
