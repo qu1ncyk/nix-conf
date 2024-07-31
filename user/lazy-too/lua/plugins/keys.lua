@@ -54,7 +54,7 @@ return {
                 filter = function(client)
                   -- Don't use formatters from LSPs where there is a formatter
                   -- in none-ls
-                  return not vim.tbl_contains({ "lua_ls", "tsserver", "cssls", "html" }, client)
+                  return not vim.tbl_contains({ "lua_ls", "tsserver", "cssls", "html" }, client.name)
                 end,
               })
             end,
