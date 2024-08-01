@@ -52,19 +52,21 @@
 
     formatter.x86_64-linux = stable-pkgs.alejandra;
 
-    # nix run .#lazy-lock
-    packages.${system}.lazy-lock = let
-      lock =
-        (import user/lazy-too {
-          pkgs = unstable-pkgs;
-          lazy-too = lazy-too';
-        })
-        .lock;
-    in
-      unstable-pkgs.writeScriptBin "lazy-lock" ''
+    packages.${system} = let
+      built-lazy-too = import user/lazy-too {
+        pkgs = unstable-pkgs;
+        lazy-too = lazy-too';
+      };
+    in {
+      # nix run .#lazy-lock
+      lazy-lock = unstable-pkgs.writeScriptBin "lazy-lock" ''
         # Dream2Nix needs to be in the correct directory
         cd user/lazy-too
-        exec ${lock}/bin/refresh
+        exec ${built-lazy-too.lock}/bin/refresh
       '';
+
+      # nix run .#nvim
+      nvim = built-lazy-too.neovim;
+    };
   };
 }
