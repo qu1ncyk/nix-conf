@@ -51,7 +51,14 @@ return {
           { "<leader>l", ":Telescope filetypes<CR>", desc = "Programming language" },
           { "<leader>o", ":Telescope oldfiles<CR>", desc = "Old files" },
           { "<leader>p", ":Telescope projects<CR>", desc = "Telescope projects" },
-          { "<leader>s", ":ToggleTerm<CR>", desc = "Toggle shell" },
+          {
+            "<leader>s",
+            function()
+              require("toggleterm").toggle(vim.v.count)
+            end,
+            desc = "Toggle shell",
+          },
+          { "<leader>S", ":ToggleTermToggleAll<CR>", desc = "Toggle all shells" },
           { "<leader>t", ":NvimTreeToggle<CR>", desc = "Nvim Tree" },
           { ";", ":", desc = "Command mode", silent = false },
           { "f ", ";", desc = "Next found char" },

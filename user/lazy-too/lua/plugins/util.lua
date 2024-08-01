@@ -29,7 +29,7 @@ return {
       enable_autocmd = false,
     },
   },
-  { "akinsho/toggleterm.nvim", opts = {}, cmd = "ToggleTerm" },
+  { "akinsho/toggleterm.nvim", opts = {}, cmd = "ToggleTermToggleAll" },
   {
     "ahmedkhalf/project.nvim",
     main = "project_nvim",
