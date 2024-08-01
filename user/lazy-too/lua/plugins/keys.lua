@@ -1,3 +1,32 @@
+---The keybind for pressing `I` or `A` in visual line mode. This function makes
+---the behavior the similar to normal mode, but on multiple lines.
+---@param key "I" | "A"
+local function v_line_IA(key)
+  local v_block_insert
+  if key == "I" then
+    v_block_insert = vim.api.nvim_replace_termcodes("<C-V>0I", true, false, true)
+  else
+    v_block_insert = vim.api.nvim_replace_termcodes("<C-V>$A", true, false, true)
+  end
+
+  return function()
+    -- Only in visual line mode
+    if vim.fn.mode() == "V" then
+      vim.api.nvim_feedkeys(v_block_insert, "n", false)
+      -- Make `gv` enter visual line mode instead of visual block
+      vim.api.nvim_create_autocmd("InsertLeave", {
+        once = true,
+        callback = function()
+          local gv_v_line = vim.api.nvim_replace_termcodes("ugvV<Esc><C-R>gvV<Esc>", true, false, true)
+          vim.api.nvim_feedkeys(gv_v_line, "n", false)
+        end,
+      })
+    else
+      vim.api.nvim_feedkeys(key, "n", false)
+    end
+  end
+end
+
 return {
   {
     "folke/which-key.nvim",
@@ -78,6 +107,11 @@ return {
             { "<leader>/", "gc", desc = "Toggle comment", noremap = false },
             { "<leader>j", ":m '>+1<CR>gv=gv", desc = "Move lines down" },
             { "<leader>k", ":m '<-2<CR>gv=gv", desc = "Move lines up" },
+          },
+          {
+            mode = "v",
+            { "I", v_line_IA("I"), desc = "Prepend" },
+            { "A", v_line_IA("A"), desc = "Append" },
           },
           {
             mode = "t",
