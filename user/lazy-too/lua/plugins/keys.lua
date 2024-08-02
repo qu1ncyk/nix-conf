@@ -128,6 +128,29 @@ return {
             mode = "i",
             { "jj", "<Esc>", desc = "Escape insert mode" },
           },
+          {
+            mode = { "n", "v" },
+            {
+              "j",
+              function()
+                if vim.v.count == 0 then
+                  vim.api.nvim_feedkeys("gj", "n", false)
+                else
+                  vim.api.nvim_feedkeys(vim.v.count .. "j", "n", false)
+                end
+              end,
+            },
+            {
+              "k",
+              function()
+                if vim.v.count == 0 then
+                  vim.api.nvim_feedkeys("gk", "n", false)
+                else
+                  vim.api.nvim_feedkeys(vim.v.count .. "k", "n", false)
+                end
+              end,
+            },
+          },
         },
       },
     },
