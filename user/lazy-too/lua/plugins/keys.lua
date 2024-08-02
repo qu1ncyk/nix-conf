@@ -151,6 +151,35 @@ return {
               end,
             },
           },
+          {
+            mode = { "v", "o" },
+            {
+              "iq",
+              function()
+                local current_line = vim.fn.line(".")
+                local quote_pos = vim.fn.searchpos([['\|"\|`]], "cnWz", current_line)
+                if quote_pos[1] == 0 then
+                  return
+                end
+                local quote = vim.fn.getline("."):sub(quote_pos[2], quote_pos[2])
+                vim.api.nvim_feedkeys('i' .. quote, "n", false)
+              end,
+              desc = "inner quote"
+            },
+            {
+              "aq",
+              function()
+                local current_line = vim.fn.line(".")
+                local quote_pos = vim.fn.searchpos([['\|"\|`]], "cnWz", current_line)
+                if quote_pos[1] == 0 then
+                  return
+                end
+                local quote = vim.fn.getline("."):sub(quote_pos[2], quote_pos[2])
+                vim.api.nvim_feedkeys('a' .. quote, "n", false)
+              end,
+              desc = "quote"
+            },
+          },
         },
       },
     },
