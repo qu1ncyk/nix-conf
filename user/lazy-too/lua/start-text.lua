@@ -141,7 +141,14 @@ local function render_window()
   -- Setup the correct event handlers to make this behave like `:intro`
   local vim_resized = false
   local autocmd
-  autocmd = vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI", "BufWritePre", "WinResized", "VimResized" }, {
+  autocmd = vim.api.nvim_create_autocmd({
+    "TextChanged",
+    "TextChangedI",
+    "BufReadPre",
+    "BufWritePre",
+    "WinResized",
+    "VimResized",
+  }, {
     callback = function(ev)
       if ev.event == "VimResized" then
         -- Recenter when Vim resizes
