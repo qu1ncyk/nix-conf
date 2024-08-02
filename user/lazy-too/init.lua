@@ -9,4 +9,5 @@ vim.g.localleader = "\\"
 -- IMPORTS
 require("vars") -- Variables
 require("opts") -- Options
+require("start-text")
 require("lazy").setup("plugins")
