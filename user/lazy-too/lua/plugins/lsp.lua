@@ -33,7 +33,7 @@ return {
       setup_lsp("rust_analyzer")
       setup_lsp("svelte")
       setup_lsp("tsserver")
-      setup_lsp("typst_lsp")
+      -- setup_lsp("typst_lsp")
       -- setup_lsp("unocss", {
       --   filetypes = { "html", "javascriptreact", "rescript", "typescriptreact", "vue", "svelte", "astro" },
       -- })

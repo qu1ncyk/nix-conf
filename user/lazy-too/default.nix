@@ -61,6 +61,7 @@
             )
           ];
         };
+        image = pkgs.vimPlugins.image-nvim;
       };
 
       lsp = {
@@ -78,7 +79,7 @@
         '';
         svelte = pkgs.nodePackages.svelte-language-server;
         tsserver = pkgs.nodePackages.typescript-language-server;
-        typst_lsp = pkgs.typst-lsp;
+        # typst_lsp = pkgs.typst-lsp;
         # unocss = pkgs.unocss;
       };
       nls = {
