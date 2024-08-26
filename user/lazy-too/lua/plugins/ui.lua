@@ -30,7 +30,7 @@ return {
     config = function()
       local lualine = require("lualine")
       local function spaces()
-        return " " .. vim.o.shiftwidth
+        return "󰌒 " .. vim.o.shiftwidth
       end
       lualine.setup({
         sections = {
