@@ -8,8 +8,10 @@ return {
 
       local function setup_lsp(lsp, config)
         local cmd = lspconfig[lsp].document_config.default_config.cmd
-        local exe = from_nix.lsp[lsp] .. "/bin/" .. cmd[1]
-        cmd[1] = exe
+        if cmd then
+          local exe = from_nix.lsp[lsp] .. "/bin/" .. cmd[1]
+          cmd[1] = exe
+        end
 
         lspconfig[lsp].setup(vim.tbl_extend("keep", config or {}, {
           capabilities = require("cmp_nvim_lsp").default_capabilities(),
@@ -29,6 +31,7 @@ return {
       setup_lsp("jsonls")
       setup_lsp("lua_ls")
       setup_lsp("nil_ls")
+      setup_lsp("omnisharp", { cmd = { from_nix.lsp.omnisharp .. "/bin/OmniSharp" } })
       setup_lsp("pyright")
       setup_lsp("rust_analyzer")
       setup_lsp("svelte")

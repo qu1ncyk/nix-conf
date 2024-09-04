@@ -20,6 +20,7 @@
             bash
             c
             cpp
+            c_sharp
             css
             html
             javascript
@@ -72,6 +73,7 @@
         jsonls = pkgs.vscode-langservers-extracted;
         lua_ls = pkgs.lua-language-server;
         nil_ls = pkgs.nil;
+        omnisharp = pkgs.omnisharp-roslyn;
         rust_analyzer = pkgs.writeScriptBin "rust-analyzer" ''
           PATH=$PATH:${pkgs.cargo}/bin:${pkgs.rustc}/bin
           ${pkgs.rust-analyzer}/bin/rust-analyzer
