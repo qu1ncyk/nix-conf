@@ -37,6 +37,8 @@
             vimdoc
           ];
         };
+        image = pkgs.vimPlugins.image-nvim;
+        magick = pkgs.luajitPackages.magick;
         lspconfig = pkgs.vimPlugins.nvim-lspconfig.overrideAttrs {
           patches = [
             (

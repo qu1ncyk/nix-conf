@@ -1,4 +1,4 @@
--- local from_nix = require("lazy.from-nix")
+local from_nix = require("lazy.from-nix")
 return {
   {
     "Mofiqul/vscode.nvim",
@@ -52,5 +52,14 @@ return {
     "romgrk/barbar.nvim",
     opts = {},
   },
-  -- { name = "image.nvim", dir = from_nix.plugins.image, opts = {backend = "ueberzug"} },
+  {
+    name = "image.nvim",
+    dir = from_nix.plugins.image,
+    opts = {
+      integrations = {
+        markdown = { enabled = false },
+        norg = { enabled = false },
+      },
+    },
+  },
 }
