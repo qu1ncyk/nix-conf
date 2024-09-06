@@ -39,6 +39,7 @@
         };
         image = pkgs.vimPlugins.image-nvim;
         magick = pkgs.luajitPackages.magick;
+        mathjax = pkgs.mathjax-node-cli;
         lspconfig = pkgs.vimPlugins.nvim-lspconfig.overrideAttrs {
           patches = [
             (

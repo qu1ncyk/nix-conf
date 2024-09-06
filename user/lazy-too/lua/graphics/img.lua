@@ -18,6 +18,7 @@ function Img.new(img, ctx)
   local self = setmetatable({}, { __index = Img })
 
   self.img = img
+  self.img:set_depth(8)
   self.img:set_format("RGBA")
   self.id = math.random(math.pow(2, 32)) - 1
   self.cols = self.img:get_width() / term.get_size().cell_width
@@ -108,6 +109,7 @@ end
 ---Remove this `Img` from Kitty's memory.
 function Img:delete()
   io.stdout:write(escape.esc .. "_Ga=d,i=" .. self.id .. escape.esc .. "\\")
+  self.img:destroy()
 end
 
 return Img

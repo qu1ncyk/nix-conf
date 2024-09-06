@@ -83,6 +83,7 @@ M.graphic_opts_defaults = {
   filetypes = {
     markdown = {
       image = require("graphics.markdown-image"),
+      latex = require("graphics.markdown-latex"),
     },
   },
 }
