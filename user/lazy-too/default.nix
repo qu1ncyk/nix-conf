@@ -27,6 +27,7 @@
             json
             lua
             markdown
+            matlab
             nix
             python
             rust
