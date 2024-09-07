@@ -1,7 +1,7 @@
-{pkgs, ...}: {
+{stable-pkgs, ...}: {
   home.packages = [
-    (pkgs.retroarch.override {
-      cores = with pkgs.libretro; [
+    (stable-pkgs.retroarch.override {
+      cores = with stable-pkgs.libretro; [
         bsnes
         mgba
         nestopia

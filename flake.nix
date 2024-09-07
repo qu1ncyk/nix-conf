@@ -44,7 +44,7 @@
         modules = [./home.nix];
         extraSpecialArgs = {
           pkgs = unstable-pkgs;
-          inherit nixvim;
+          inherit nixvim stable-pkgs;
           lazy-too = lazy-too';
         };
       };
