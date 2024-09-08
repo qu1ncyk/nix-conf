@@ -33,7 +33,20 @@ opt.splitbelow = true -- bool: Place new window below the current one
 
 opt.cursorline = true
 opt.list = true
-opt.listchars = "multispace:   ┊,trail:~,tab:>-"
+
+vim.api.nvim_create_autocmd({ "OptionSet", "BufEnter" }, {
+  callback = function(ev)
+    if ev.event == "OptionSet" and ev.match ~= "shiftwidth" then
+      return
+    end
+
+    local spaces = (" "):rep(vim.bo[ev.buf].shiftwidth - 1)
+    local listchars = "multispace:" .. spaces .. "┊,trail:~,tab:>-"
+    if listchars ~= opt.listchars then
+      opt.listchars = listchars
+    end
+  end,
+})
 
 opt.foldmethod = "indent"
 opt.foldlevel = 99
