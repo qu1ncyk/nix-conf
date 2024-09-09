@@ -78,6 +78,7 @@ return {
           { "<leader>.", vim.lsp.buf.code_action, desc = "Code action" },
           { "<leader>h", vim.lsp.buf.hover, desc = "Hover" },
           { "<leader>H", vim.lsp.buf.signature_help, desc = "Show signature help" },
+          { "<leader>db", ":DapToggleBreakpoint<CR>", desc = "Toggle DAP breakpoint" },
           { "<leader>dc", vim.lsp.buf.declaration, desc = "Go to declaration" },
           { "<leader>df", vim.lsp.buf.definition, desc = "Go to definition" },
           { "<leader>di", vim.lsp.buf.implementation, desc = "Go to implementation" },

@@ -38,6 +38,7 @@
             vimdoc
           ];
         };
+        dap_python = pkgs.python3.withPackages (ps: [ps.debugpy]);
         image = pkgs.vimPlugins.image-nvim;
         magick = pkgs.luajitPackages.magick;
         mathjax = pkgs.mathjax-node-cli;

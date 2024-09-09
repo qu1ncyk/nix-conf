@@ -23,7 +23,4 @@ return {
       },
     },
   },
-  -- { 'mfussenegger/nvim-dap', opts = {} },
-  -- { 'rcarriga/nvim-dap-ui',    dependencies = 'mfussenegger/nvim-dap' },
-  -- { 'mfussenegger/nvim-dap-python', dependencies = 'mfussenegger/nvim-dap' },
 }
