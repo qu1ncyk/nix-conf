@@ -126,7 +126,7 @@ return {
             { "<Esc>", "<C-\\><C-n>", desc = "Escape terminal mode" },
           },
           {
-            mode = "i",
+            mode = {"i", "s"},
             { "jj", "<Esc>", desc = "Escape insert mode" },
           },
           {
