@@ -163,9 +163,9 @@ return {
                   return
                 end
                 local quote = vim.fn.getline("."):sub(quote_pos[2], quote_pos[2])
-                vim.api.nvim_feedkeys('i' .. quote, "n", false)
+                vim.api.nvim_feedkeys("i" .. quote, "n", false)
               end,
-              desc = "inner quote"
+              desc = "inner quote",
             },
             {
               "aq",
@@ -176,11 +176,22 @@ return {
                   return
                 end
                 local quote = vim.fn.getline("."):sub(quote_pos[2], quote_pos[2])
-                vim.api.nvim_feedkeys('a' .. quote, "n", false)
+                vim.api.nvim_feedkeys("a" .. quote, "n", false)
               end,
-              desc = "quote"
+              desc = "quote",
             },
           },
+        },
+        {
+          "<S-CR>",
+          function()
+            local luasnip = require("luasnip")
+            if luasnip.jumpable() then
+              luasnip.jump(1)
+            end
+          end,
+          desc = "Jump to next LuaSnip input",
+          mode = { "n", "i", "s" },
         },
       },
     },
