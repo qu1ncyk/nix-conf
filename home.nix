@@ -19,6 +19,7 @@
     user/lf.nix
     # user/nixvim
     user/lazy-too/hm-module.nix
+    user/olympus.nix
     user/retroarch.nix
     user/sway
     user/waybar
