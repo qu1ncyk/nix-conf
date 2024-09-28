@@ -21,7 +21,6 @@
     user/git.nix
     user/kitty.nix
     user/lf.nix
-    # user/nixvim
     user/lazy-too/hm-module.nix
     user/retroarch.nix
     user/sway

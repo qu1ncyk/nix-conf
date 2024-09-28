@@ -10,10 +10,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "unstable-nixpkgs";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "unstable-nixpkgs";
-    };
     lazy-too = {
       url = "path:/home/quincy/Code/lazy-too";
       inputs.nixpkgs.follows = "unstable-nixpkgs";
@@ -25,7 +21,6 @@
     unstable-nixpkgs,
     olympus-nixpkgs,
     home-manager,
-    nixvim,
     lazy-too,
     ...
   }: let
@@ -48,7 +43,7 @@
         modules = [./home.nix];
         extraSpecialArgs = {
           pkgs = unstable-pkgs;
-          inherit nixvim stable-pkgs olympus-pkgs;
+          inherit stable-pkgs olympus-pkgs;
           lazy-too = lazy-too';
         };
       };
