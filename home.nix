@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  olympus-pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "quincy";
@@ -19,7 +23,6 @@
     user/lf.nix
     # user/nixvim
     user/lazy-too/hm-module.nix
-    user/olympus.nix
     user/retroarch.nix
     user/sway
     user/waybar
@@ -35,6 +38,7 @@
     keepassxc
     libreoffice
     networkmanagerapplet
+    olympus-pkgs.olympus
     p7zip
     pavucontrol
     playerctl

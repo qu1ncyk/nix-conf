@@ -4,6 +4,8 @@
   inputs = {
     stable-nixpkgs.url = "nixpkgs/nixos-24.05";
     unstable-nixpkgs.url = "nixpkgs/nixos-unstable";
+    # https://github.com/NixOS/nixpkgs/pull/309327
+    olympus-nixpkgs.url = "github:Petingoso/nixpkgs/olympus";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "unstable-nixpkgs";
@@ -21,6 +23,7 @@
   outputs = {
     stable-nixpkgs,
     unstable-nixpkgs,
+    olympus-nixpkgs,
     home-manager,
     nixvim,
     lazy-too,
@@ -29,6 +32,7 @@
     system = "x86_64-linux";
     unstable-pkgs = unstable-nixpkgs.legacyPackages.${system};
     stable-pkgs = stable-nixpkgs.legacyPackages.${system};
+    olympus-pkgs = olympus-nixpkgs.legacyPackages.${system};
     lazy-too' = lazy-too.packages.${system};
   in {
     nixosConfigurations = {
@@ -44,7 +48,7 @@
         modules = [./home.nix];
         extraSpecialArgs = {
           pkgs = unstable-pkgs;
-          inherit nixvim stable-pkgs;
+          inherit nixvim stable-pkgs olympus-pkgs;
           lazy-too = lazy-too';
         };
       };
