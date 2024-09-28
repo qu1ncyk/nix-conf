@@ -84,7 +84,7 @@
           ${pkgs.rust-analyzer}/bin/rust-analyzer
         '';
         svelte = pkgs.nodePackages.svelte-language-server;
-        tsserver = pkgs.nodePackages.typescript-language-server;
+        ts_ls = pkgs.nodePackages.typescript-language-server;
         typst_lsp = pkgs.typst-lsp;
         # unocss = pkgs.unocss;
       };
