@@ -24,6 +24,7 @@
     user/lazy-too/hm-module.nix
     user/retroarch.nix
     user/sway
+    user/systemd
     user/waybar
     user/zk.nix
   ];
