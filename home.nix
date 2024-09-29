@@ -44,16 +44,16 @@
     pavucontrol
     playerctl
     prismlauncher
-    ripgrep
     restic
+    ripgrep
     safeeyes
     syncthing
     thunderbird
+    unzip
     wget
     wl-clipboard
     wl-clipboard-x11
     wl-mirror
-    unzip
     xdg-utils
     zip
 
