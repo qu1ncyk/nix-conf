@@ -32,7 +32,9 @@
   # environment.
   home.packages = with pkgs; [
     bluetuith
+    discord
     dunst
+    file
     gimp
     keepassxc
     libreoffice
@@ -41,6 +43,7 @@
     p7zip
     pavucontrol
     playerctl
+    prismlauncher
     ripgrep
     restic
     safeeyes
@@ -113,6 +116,7 @@
       };
     };
     bashmount.enable = true;
+    btop.enable = true;
     firefox = {
       enable = true;
       package = pkgs.firefox-devedition;

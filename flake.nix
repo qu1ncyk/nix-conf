@@ -25,7 +25,13 @@
     ...
   }: let
     system = "x86_64-linux";
-    unstable-pkgs = unstable-nixpkgs.legacyPackages.${system};
+    unstable-pkgs = import unstable-nixpkgs {
+      inherit system;
+      config.allowUnfreePredicate = pkg:
+        builtins.elem (unstable-pkgs.lib.getName pkg) [
+          "discord"
+        ];
+    };
     stable-pkgs = stable-nixpkgs.legacyPackages.${system};
     olympus-pkgs = olympus-nixpkgs.legacyPackages.${system};
     lazy-too' = lazy-too.packages.${system};
