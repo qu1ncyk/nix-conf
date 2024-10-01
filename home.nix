@@ -55,6 +55,7 @@
     wl-clipboard
     wl-clipboard-x11
     wl-mirror
+    vlc
     xdg-utils
     zip
 
