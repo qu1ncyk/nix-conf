@@ -22,6 +22,7 @@
             cpp
             c_sharp
             css
+            glsl
             html
             javascript
             json
