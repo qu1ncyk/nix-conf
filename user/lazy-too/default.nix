@@ -49,10 +49,10 @@
               pkgs.writeText
               "lspconfig patch"
               ''
-                diff --git a/lua/lspconfig/server_configurations/rust_analyzer.lua b/lua/lspconfig/server_configurations/rust_analyzer.lua
+                diff --git a/lua/lspconfig/configs/rust_analyzer.lua b/lua/lspconfig/configs/rust_analyzer.lua
                 index b89546a..9367fc3 100644
-                --- a/lua/lspconfig/server_configurations/rust_analyzer.lua
-                +++ b/lua/lspconfig/server_configurations/rust_analyzer.lua
+                --- a/lua/lspconfig/configs/rust_analyzer.lua
+                +++ b/lua/lspconfig/configs/rust_analyzer.lua
                 @@ -48,7 +48,7 @@ return {
 
                        if cargo_crate_dir ~= nil then
