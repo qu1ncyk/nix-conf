@@ -127,7 +127,15 @@
     wofi.enable = true;
   };
 
-  xdg.enable = true;
+  xdg = {
+    enable = true;
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "application/pdf" = "firefox-devedition.desktop";
+      };
+    };
+  };
   home.file.".XCompose".source = user/XCompose;
 
   # Let Home Manager install and manage itself.
