@@ -1,5 +1,4 @@
 #!/bin/sh
-swaymsg workspace 10
 
 safeeyes &
 wl-gammarelay-rs run &
@@ -8,6 +7,7 @@ syncthing --no-browser &
 nm-applet --no-agent &
 blueman-applet &
 keepassxc &
+thunderbird &
 
-sleep 1
-swaymsg workspace 1
+rm -f /tmp/ssh-agent.socket
+eval `ssh-agent -a /tmp/ssh-agent.socket`

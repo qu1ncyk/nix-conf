@@ -61,10 +61,13 @@ bindsym $mod+n exec $term -e nvim
 
 bindsym $mod+Escape exec $term -e ~/scripts/$(ls -p ~/scripts | grep ^[^\\.\/]*$ | wofi --dmenu)
 
-exec eval `ssh-agent -a /tmp/ssh-agent.socket`
 exec swaybg -i ~/.config/sway/background.png
 gaps inner 10
 
+# Negate search: https://www.reddit.com/r/swaywm/comments/n4rmf6
+assign [app_id="org.keepassxc.KeePassXC" title="^(?!KeePassXC - {1,2}Access Request$)"] workspace 10
+for_window [title="KeePassXC - {1,2}Access Request"] floating enable
+assign [app_id="thunderbird"] workspace 10
 exec ~/.config/sway/boot.sh
 
 ### Output configuration
