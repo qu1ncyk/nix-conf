@@ -50,3 +50,4 @@ vim.api.nvim_create_autocmd({ "OptionSet", "BufEnter" }, {
 
 opt.foldmethod = "indent"
 opt.foldlevel = 99
+vim.g.markdown_folding = true
