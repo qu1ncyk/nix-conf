@@ -26,6 +26,7 @@
     user/sway
     user/systemd
     user/waybar
+    user/zathura.nix
     user/zk.nix
   ];
 
@@ -132,7 +133,7 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "application/pdf" = "firefox-devedition.desktop";
+        "application/pdf" = "org.pwmt.zathura.desktop";
       };
     };
   };
