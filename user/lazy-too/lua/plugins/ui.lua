@@ -59,6 +59,9 @@ return {
       integrations = {
         markdown = { enabled = false },
         norg = { enabled = false },
+        typst = { enabled = false },
+        html = { enabled = false },
+        css = { enabled = false },
       },
     },
   },
