@@ -67,14 +67,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1728489976,
-        "narHash": "sha256-aoR34gyy8yN/5DfPK6pv8gMtBVGD0tuv+8LhL6tGap4=",
-        "path": "/home/quincy/Code/lazy-too",
-        "type": "path"
+        "lastModified": 1728489964,
+        "narHash": "sha256-M4wVvzdOtWJvDxiXnoYHSeudJOy+JRxUfwscUPXi63E=",
+        "owner": "qu1ncyk",
+        "repo": "lazy-too",
+        "rev": "640edcb3cb805e6bb35c91f8ddee6e357847b75e",
+        "type": "github"
       },
       "original": {
-        "path": "/home/quincy/Code/lazy-too",
-        "type": "path"
+        "owner": "qu1ncyk",
+        "repo": "lazy-too",
+        "type": "github"
       }
     },
     "nixpkgs": {
