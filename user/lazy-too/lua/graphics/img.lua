@@ -1,6 +1,5 @@
 local escape = require("graphics.escape")
 
-local base64 = require("image.utils.base64")
 local term = require("image.utils.term")
 
 ---@class Img
@@ -56,7 +55,7 @@ function Img:transmit()
       .. ",r="
       .. self.rows
       .. ";"
-      .. base64.encode(path)
+      .. vim.base64.encode(path)
       .. escape.esc
       .. "\\"
   )
