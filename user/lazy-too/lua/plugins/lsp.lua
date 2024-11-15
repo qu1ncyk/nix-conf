@@ -36,7 +36,7 @@ return {
       setup_lsp("rust_analyzer")
       setup_lsp("svelte")
       setup_lsp("ts_ls")
-      setup_lsp("typst_lsp")
+      setup_lsp("tinymist", { single_file_support = true })
       -- setup_lsp("unocss", {
       --   filetypes = { "html", "javascriptreact", "rescript", "typescriptreact", "vue", "svelte", "astro" },
       -- })

@@ -71,7 +71,7 @@
       };
 
       lsp = {
-        inherit (pkgs) pyright;
+        inherit (pkgs) pyright tinymist;
         clangd = pkgs.clang-tools_18;
         cssls = pkgs.vscode-langservers-extracted;
         emmet_ls = pkgs.emmet-language-server;
@@ -86,7 +86,6 @@
         '';
         svelte = pkgs.nodePackages.svelte-language-server;
         ts_ls = pkgs.nodePackages.typescript-language-server;
-        typst_lsp = pkgs.typst-lsp;
         # unocss = pkgs.unocss;
       };
       nls = {
