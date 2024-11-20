@@ -36,7 +36,8 @@ return {
       setup_lsp("rust_analyzer")
       setup_lsp("svelte")
       setup_lsp("ts_ls")
-      setup_lsp("tinymist", { single_file_support = true })
+      -- https://github.com/Myriad-Dreamin/tinymist/issues/638#issuecomment-2395941103
+      setup_lsp("tinymist", { single_file_support = true, offset_encoding = "utf-8" })
       -- setup_lsp("unocss", {
       --   filetypes = { "html", "javascriptreact", "rescript", "typescriptreact", "vue", "svelte", "astro" },
       -- })
