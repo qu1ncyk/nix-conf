@@ -123,3 +123,5 @@ set cleaner ctpvclear
 map gs :cd ~/school
 
 set relativenumber
+
+map gr $link=$(readlink "$f"); lf "$link"
