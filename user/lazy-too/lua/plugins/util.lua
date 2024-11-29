@@ -11,7 +11,13 @@ return {
     },
     cmd = "NvimTreeToggle",
   },
-  { "windwp/nvim-autopairs", opts = {}, event = "InsertEnter" },
+  {
+    "windwp/nvim-autopairs",
+    opts = {
+      enable_check_bracket_line = false,
+    },
+    event = "InsertEnter",
+  },
   {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
