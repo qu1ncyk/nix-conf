@@ -65,8 +65,8 @@ exec swaybg -i ~/.config/sway/background.png
 gaps inner 10
 
 # Negate search: https://www.reddit.com/r/swaywm/comments/n4rmf6
-assign [app_id="org.keepassxc.KeePassXC" title="^(?!KeePassXC - {1,2}Access Request$)"] workspace 10
-for_window [title="KeePassXC - {1,2}Access Request"] floating enable
+assign [app_id="org.keepassxc.KeePassXC" title="^(?!KeePassXC -( Browser)? {1,2}Access Request$)"] workspace 10
+for_window [title="KeePassXC -( Browser)? {1,2}Access Request"] floating enable
 assign [app_id="thunderbird"] workspace 10
 exec ~/.config/sway/boot.sh
 
