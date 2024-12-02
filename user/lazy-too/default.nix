@@ -32,6 +32,7 @@
             nix
             python
             rust
+            scheme
             svelte
             toml
             typescript
