@@ -65,7 +65,7 @@
       };
     in {
       # nix run .#lazy-lock
-      lazy-lock = unstable-pkgs.writeScriptBin "lazy-lock" ''
+      lazy-lock = unstable-pkgs.writeShellScriptBin "lazy-lock" ''
         # Dream2Nix needs to be in the correct directory
         cd user/lazy-too
         exec ${built-lazy-too.lock}/bin/refresh
