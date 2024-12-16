@@ -4,6 +4,7 @@
     options = {
       scroll-step = 200;
       recolor-keephue = true;
+      selection-clipboard = "clipboard";
     };
   };
 }
