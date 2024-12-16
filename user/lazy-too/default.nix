@@ -45,29 +45,12 @@
         magick = pkgs.luajitPackages.magick;
         mathjax = pkgs.mathjax-node-cli;
         lspconfig = pkgs.vimPlugins.nvim-lspconfig.overrideAttrs {
-          patches = [
-            (
-              pkgs.writeText
-              "lspconfig patch"
-              ''
-                diff --git a/lua/lspconfig/configs/rust_analyzer.lua b/lua/lspconfig/configs/rust_analyzer.lua
-                index b89546a..9367fc3 100644
-                --- a/lua/lspconfig/configs/rust_analyzer.lua
-                +++ b/lua/lspconfig/configs/rust_analyzer.lua
-                @@ -48,7 +48,7 @@ return {
-
-                       if cargo_crate_dir ~= nil then
-                         local cmd = {
-                -          'cargo',
-                +          '${pkgs.cargo}/bin/cargo',
-                           'metadata',
-                           '--no-deps',
-                           '--format-version',
-              ''
-              # }} (This line matches the opening brackets in the patch, which
-              # fixes Vim's % key)
-            )
-          ];
+          inherit (pkgs) cargo;
+          patches = [./lspconfig.patch];
+          postPatch = ''
+            substituteInPlace lua/lspconfig/configs/rust_analyzer.lua \
+              --subst-var cargo
+          '';
         };
       };
 
