@@ -1,8 +1,11 @@
-{stable-pkgs, ...}: {
+{pkgs, ...}: let
+  doukutsu = pkgs.callPackage ../pkgs/doukutsu-rs-libretro.nix {};
+in {
   home.packages = [
-    (stable-pkgs.retroarch.override {
-      cores = with stable-pkgs.libretro; [
+    (pkgs.retroarch-bare.wrapper {
+      cores = with pkgs.libretro; [
         bsnes
+        doukutsu
         mgba
         nestopia
       ];
