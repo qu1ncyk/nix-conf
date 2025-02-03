@@ -2,6 +2,17 @@
   lazy-too,
   pkgs,
 }: let
+  wrapWithPath = pkg: pathPkgs:
+    pkgs.runCommand "wrap-with-path" {
+      nativeBuildInputs = [pkgs.makeWrapper];
+    } ''
+      cd ${pkg}
+      mkdir -p $out/bin
+      for bin in bin/*; do
+        makeWrapper ${pkg}/$bin $out/$bin \
+          --suffix PATH : ${pkgs.lib.makeBinPath pathPkgs}
+      done
+    '';
   neovim = lazy-too.buildNeovim {
     configRoot = ./.;
     # Tell Dream2Nix that this is the root dir
@@ -23,6 +34,7 @@
             c_sharp
             css
             glsl
+            haskell
             html
             javascript
             json
@@ -59,15 +71,16 @@
         clangd = pkgs.clang-tools_18;
         cssls = pkgs.vscode-langservers-extracted;
         emmet_ls = pkgs.emmet-language-server;
+        hls =
+          wrapWithPath pkgs.haskellPackages.haskell-language-server
+          # hls needs itself in the PATH or else the wrapper cannot find it
+          [pkgs.ghc pkgs.haskellPackages.haskell-language-server];
         html = pkgs.vscode-langservers-extracted;
         jsonls = pkgs.vscode-langservers-extracted;
         lua_ls = pkgs.lua-language-server;
         nil_ls = pkgs.nil;
         omnisharp = pkgs.omnisharp-roslyn;
-        rust_analyzer = pkgs.writeScriptBin "rust-analyzer" ''
-          PATH=$PATH:${pkgs.cargo}/bin:${pkgs.rustc}/bin
-          ${pkgs.rust-analyzer}/bin/rust-analyzer
-        '';
+        rust_analyzer = wrapWithPath pkgs.rust-analyzer [pkgs.rustc pkgs.cargo];
         svelte = pkgs.nodePackages.svelte-language-server;
         ts_ls = pkgs.nodePackages.typescript-language-server;
         # unocss = pkgs.unocss;

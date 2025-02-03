@@ -27,6 +27,7 @@ return {
         },
       })
       setup_lsp("emmet_ls", { cmd = { from_nix.lsp.emmet_ls .. "/bin/emmet-language-server", "--stdio" } })
+      setup_lsp("hls")
       setup_lsp("html")
       setup_lsp("jsonls")
       setup_lsp("lua_ls")
