@@ -33,6 +33,7 @@
             cpp
             c_sharp
             css
+            elsa
             glsl
             haskell
             html
