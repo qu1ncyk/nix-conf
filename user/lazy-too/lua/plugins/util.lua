@@ -16,6 +16,7 @@ return {
     config = function()
       require("lf").setup({})
       vim.api.nvim_create_autocmd("User", {
+        pattern = "LfTermEnter",
         callback = function(a)
           vim.api.nvim_buf_set_keymap(a.buf, "t", "<Esc>", "<Esc>", { nowait = true })
         end,
