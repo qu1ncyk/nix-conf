@@ -46,6 +46,7 @@ return {
           { "<leader>dj", vim.diagnostic.goto_prev, desc = "Next diagnostic" },
           { "<leader>dk", vim.diagnostic.goto_next, desc = "Previous diagnostic" },
           { "<leader>f", ":Telescope find_files<CR>", desc = "Telescope files" },
+          { "<leader>m", ":Lf<CR>", desc = "Manage files (lf)" },
           { "<leader>j", ":m .+1<CR>==", desc = "Move line down" },
           { "<leader>k", ":m .-2<CR>==", desc = "Move line up" },
           { "<leader>l", ":Telescope filetypes<CR>", desc = "Programming language" },

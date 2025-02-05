@@ -12,6 +12,18 @@ return {
     cmd = "NvimTreeToggle",
   },
   {
+    "lmburns/lf.nvim",
+    config = function()
+      require("lf").setup({})
+      vim.api.nvim_create_autocmd("User", {
+        callback = function(a)
+          vim.api.nvim_buf_set_keymap(a.buf, "t", "<Esc>", "<Esc>", { nowait = true })
+        end,
+      })
+    end,
+    cmd = "Lf",
+  },
+  {
     "windwp/nvim-autopairs",
     opts = {
       enable_check_bracket_line = false,
