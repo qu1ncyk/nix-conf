@@ -21,9 +21,10 @@ return {
   },
   { "rcarriga/nvim-dap-ui", opts = {}, lazy = true, dependencies = { "nvim-neotest/nvim-nio" } },
   {
-    "mfussenegger/nvim-dap-python",
+    "nvim-dap-python",
+    dir = from_nix.plugins.dap_python,
     config = function()
-      require("dap-python").setup(from_nix.plugins.dap_python .. "/bin/python")
+      require("dap-python").setup(from_nix.plugins.dap_python_debugpy .. "/bin/python")
     end,
     filetype = "python",
   },
