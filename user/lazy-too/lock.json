@@ -31,10 +31,11 @@
       "cmp-cmdline": {
         "args": {
           "hash": "sha256-iBmXp+gUSMbgfkv7c7RDQAwPq02e07wEnBETP0dWBOo=",
-          "rev": "d250c63aa13ead745e3a40f61fdd3470efde3923",
-          "url": "https://github.com/hrsh7th/cmp-cmdline.git"
+          "owner": "hrsh7th",
+          "repo": "cmp-cmdline",
+          "rev": "d250c63aa13ead745e3a40f61fdd3470efde3923"
         },
-        "fetcher": "fetchgit"
+        "fetcher": "fetchFromGitHub"
       },
       "cmp-git": {
         "args": {
@@ -74,10 +75,10 @@
       },
       "gitsigns.nvim": {
         "args": {
-          "hash": "sha256-jYB6EIyRUHvXC1rCW0FqyFoPWd766gB/bbZlZdae6KI=",
+          "hash": "sha256-PIwKEPNAkTiZAr8tncjFakvOWX1D5TOdSiurVZ5AcbQ=",
           "owner": "lewis6991",
           "repo": "gitsigns.nvim",
-          "rev": "2bc3b472bbc2484214549af4d9f38c127b886a55"
+          "rev": "4c40357994f386e72be92a46f41fc1664c84c87d"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -92,10 +93,10 @@
       },
       "lazydev.nvim": {
         "args": {
-          "hash": "sha256-OX3DNfVdX2xZ5P/x6TRnclbviVIGEnDppvd+//gsB7I=",
+          "hash": "sha256-LoxziiV9jlHuU4vRVFfKtVLI45ouJcuyXC6DIyQKlew=",
           "owner": "folke",
           "repo": "lazydev.nvim",
-          "rev": "a1b78b2ac6f978c72e76ea90ae92a94edf380cfc"
+          "rev": "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -128,10 +129,10 @@
       },
       "markdown.nvim": {
         "args": {
-          "hash": "sha256-c28iRCAl9pDo61gOsRQIm8d6SONZ9ZqTgF16aoIqsyI=",
+          "hash": "sha256-zPXQYfbHxAA/x/tucpF7SnRPeTRi20nJZ+AJa9FaIuk=",
           "owner": "MeanderingProgrammer",
           "repo": "markdown.nvim",
-          "rev": "e05a9f22f31c088ece3fa5928daf546a015b66ee"
+          "rev": "1cd546e96cb8520a148610ca86596ed238eeb936"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -155,10 +156,10 @@
       },
       "none-ls.nvim": {
         "args": {
-          "hash": "sha256-87CesyVClrFa3I5xczS4+3l/JRmKDKB6ZXrQnNPGxZ0=",
+          "hash": "sha256-xMb+wSwTAsI5EEfiyHFUpFDOl4WsK/dDqm8WUKm/L74=",
           "owner": "nvimtools",
           "repo": "none-ls.nvim",
-          "rev": "02f5275d8a5546092f01306f162c00c71d6e0281"
+          "rev": "a66b5b9ad8d6a3f3dd8c0677a80eb27412fa5056"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -173,19 +174,19 @@
       },
       "nvim-cmp": {
         "args": {
-          "hash": "sha256-a45FPHLtM1AnBlvJZ/ka5m7gOz84rpVk8GH75fYWqSg=",
+          "hash": "sha256-dBAYadxdnl0j5e8VnnyGxx2AE6GgCDyIBxEgmrNawxo=",
           "owner": "hrsh7th",
           "repo": "nvim-cmp",
-          "rev": "12509903a5723a876abd65953109f926f4634c30"
+          "rev": "5a11682453ac6b13dbf32cd403da4ee9c07ef1c3"
         },
         "fetcher": "fetchFromGitHub"
       },
       "nvim-dap": {
         "args": {
-          "hash": "sha256-w44vWayPjeWQqiwEpyJla5/botLVh/EiYVAlWE2dIMM=",
+          "hash": "sha256-P6jg3Ft672JmjCDMVdAmr8d7cjE2+NIwTEtlNzRTuiA=",
           "owner": "mfussenegger",
           "repo": "nvim-dap",
-          "rev": "52302f02fea3a490e55475de52fa4deb8af2eb11"
+          "rev": "379cf26e9c457b66a0152cd5d018418c03720d47"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -200,10 +201,10 @@
       },
       "nvim-lspconfig": {
         "args": {
-          "hash": "sha256-HY68FeThIYpRWiMQpFy5kVrXdPt/cjZbjgE9NOxo/ak=",
+          "hash": "sha256-u4uAkOg+/n0cghaSpDMudOLKECHi58NyyvZdt5x/Dgg=",
           "owner": "neovim",
           "repo": "nvim-lspconfig",
-          "rev": "7af2c37192deae28d1305ae9e68544f7fb5408e1"
+          "rev": "99c75820f2606b6b446cad7c75ec2ef7ee8a1317"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -218,10 +219,10 @@
       },
       "nvim-tree.lua": {
         "args": {
-          "hash": "sha256-EprjYnY3cr2l+hEeVrf58yUl0mC60HQUmngHxoJo+KA=",
+          "hash": "sha256-JjuCokexVKz3kf9YxFPpxiKTvkXfbhsbp50Sqfd2RtQ=",
           "owner": "nvim-tree",
           "repo": "nvim-tree.lua",
-          "rev": "80523101f0ae48b7f1990e907b685a3d79776c01"
+          "rev": "6709463b2d18e77f7a946027917aa00d4aaed6f4"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -263,10 +264,10 @@
       },
       "telescope.nvim": {
         "args": {
-          "hash": "sha256-zeyZMh5exWSK8tERzPF/qE24qpaVek7G4sO/yprXYqM=",
+          "hash": "sha256-Di0UIBXcnReT+6BaCdzTTg2j7oGzzXw6KfS4VbrBelE=",
           "owner": "nvim-telescope",
           "repo": "telescope.nvim",
-          "rev": "78857db9e8d819d3cc1a9a7bdc1d39d127a36495"
+          "rev": "814f102cd1da3dc78c7d2f20f2ef3ed3cdf0e6e4"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -290,19 +291,19 @@
       },
       "vscode.nvim": {
         "args": {
-          "hash": "sha256-uPrQfcVhppU7sJKj4hbMjXDP1HGkayi17DPEXdG4Cww=",
+          "hash": "sha256-HXZ0RIUVjXpKWUItQUTDOZ/MXmVzDpRWr5lcsQFDZ5k=",
           "owner": "Mofiqul",
           "repo": "vscode.nvim",
-          "rev": "298c5ce4750a256ea208b72d7a472b8824ef2a49"
+          "rev": "e5e61a0ea00b5de7a74dada2760e61ac59ecb98e"
         },
         "fetcher": "fetchFromGitHub"
       },
       "which-key.nvim": {
         "args": {
-          "hash": "sha256-hXkgrug4AMa81d2iwSJ8GK08GhhyOdTrwjlTSBW1JVg=",
+          "hash": "sha256-uvMcSduMr7Kd2oUmIOYzvWF4FIl6bZxIYm9FSw/3pCo=",
           "owner": "folke",
           "repo": "which-key.nvim",
-          "rev": "0e76a87ac51772569aec678dc74baa8e2a86100c"
+          "rev": "370ec46f710e058c9c1646273e6b225acf47cbed"
         },
         "fetcher": "fetchFromGitHub"
       },
