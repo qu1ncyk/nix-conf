@@ -53,8 +53,6 @@
             vimdoc
           ];
         };
-        dap_python = pkgs.vimPlugins.nvim-dap-python;
-        dap_python_debugpy = pkgs.python3.withPackages (ps: [ps.debugpy]);
         image = pkgs.vimPlugins.image-nvim;
         magick = pkgs.luajitPackages.magick;
         mathjax = pkgs.mathjax-node-cli;
@@ -93,6 +91,11 @@
         flake8 = pkgs.python312Packages.flake8 + "/bin/flake8";
         prettier = pkgs.nodePackages.prettier + "/bin/prettier";
         stylua = pkgs.stylua + "/bin/stylua";
+      };
+      dap = {
+        inherit (pkgs) gdb;
+        python = pkgs.vimPlugins.nvim-dap-python;
+        python_debugpy = pkgs.python3.withPackages (ps: [ps.debugpy]);
       };
     };
   };
