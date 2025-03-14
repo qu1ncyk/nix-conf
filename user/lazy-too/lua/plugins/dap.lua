@@ -1,4 +1,6 @@
 local from_nix = require("lazy.from-nix")
+local prev_args = { gdb = {} }
+
 return {
   {
     "mfussenegger/nvim-dap",
@@ -41,6 +43,8 @@ return {
               default = vim.fn.getcwd() .. "/",
               completion = "file",
             })
+            prev_args.gdb.path = path
+            prev_args.gdb.args = {}
 
             return (path and path ~= "") and path or dap.ABORT
           end,
@@ -57,6 +61,7 @@ return {
               default = vim.fn.getcwd() .. "/",
               completion = "file",
             })
+            prev_args.gdb.path = path
 
             return (path and path ~= "") and path or dap.ABORT
           end,
@@ -64,7 +69,21 @@ return {
             local args_str = vim.fn.input({
               prompt = "Arguments: ",
             })
-            return vim.split(args_str, " +")
+            local args = vim.split(args_str, " +")
+            prev_args.gdb.args = args
+            return args
+          end,
+        },
+        {
+          name = "Run executable with previous arguments (GDB)",
+          type = "gdb",
+          request = "launch",
+          program = function()
+            local path = prev_args.gdb.path
+            return (path and path ~= "") and path or dap.ABORT
+          end,
+          args = function()
+            return prev_args.gdb.args
           end,
         },
         {
