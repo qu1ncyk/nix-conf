@@ -94,6 +94,9 @@
   };
 
   # List services that you want to enable:
+  services.udev.packages = [
+    pkgs.android-udev-rules
+  ];
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
