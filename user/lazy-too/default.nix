@@ -70,7 +70,7 @@
         inherit (pkgs) pyright tinymist;
         clangd = pkgs.clang-tools_18;
         cssls = pkgs.vscode-langservers-extracted;
-        emmet_ls = pkgs.emmet-language-server;
+        emmet_language_server = wrapWithPath pkgs.emmet-language-server [pkgs.nodejs];
         hls =
           wrapWithPath pkgs.haskellPackages.haskell-language-server
           # hls needs itself in the PATH or else the wrapper cannot find it
