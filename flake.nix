@@ -13,7 +13,6 @@
     lazy-too = {
       # url = "path:/home/quincy/Code/lazy-too";
       url = "github:qu1ncyk/lazy-too";
-      inputs.nixpkgs.follows = "unstable-nixpkgs";
     };
   };
 

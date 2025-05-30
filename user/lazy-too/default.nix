@@ -14,6 +14,7 @@
       done
     '';
   neovim = lazy-too.buildNeovim {
+    neovim = pkgs.neovim-unwrapped;
     configRoot = ./.;
     # Tell Dream2Nix that this is the root dir
     # https://nix-community.github.io/dream2nix/reference/builtins-derivation/#paths
