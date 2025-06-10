@@ -2,7 +2,7 @@
   description = "System configuration";
 
   inputs = {
-    stable-nixpkgs.url = "nixpkgs/nixos-24.11";
+    stable-nixpkgs.url = "nixpkgs/nixos-25.05";
     unstable-nixpkgs.url = "nixpkgs/nixos-unstable";
     # https://github.com/NixOS/nixpkgs/pull/309327
     olympus-nixpkgs.url = "github:Petingoso/nixpkgs/olympus";
