@@ -30,7 +30,12 @@
   # environment.
   home.packages = with pkgs; [
     bluetuith
-    discord
+    (discord.overrideAttrs {
+      postFixup = ''
+        wrapProgram $out/bin/discord --set XDG_SESSION_TYPE x11
+        wrapProgram $out/bin/Discord --set XDG_SESSION_TYPE x11
+      '';
+    })
     dunst
     file
     gimp
