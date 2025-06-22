@@ -4,19 +4,21 @@ return {
     name = "nvim-lspconfig",
     dir = from_nix.plugins.lspconfig,
     config = function()
-      local lspconfig = require("lspconfig")
-
       local function setup_lsp(lsp, config)
-        local cmd = lspconfig[lsp].document_config.default_config.cmd
+        local cmd = vim.lsp.config[lsp].cmd
         if cmd then
           local exe = from_nix.lsp[lsp] .. "/bin/" .. cmd[1]
           cmd[1] = exe
         end
 
-        lspconfig[lsp].setup(vim.tbl_extend("keep", config or {}, {
-          capabilities = require("cmp_nvim_lsp").default_capabilities(),
-          cmd = cmd,
-        }))
+        vim.lsp.config(
+          lsp,
+          vim.tbl_extend("keep", config or {}, {
+            capabilities = require("cmp_nvim_lsp").default_capabilities(),
+            cmd = cmd,
+          })
+        )
+        vim.lsp.enable(lsp)
       end
 
       setup_lsp("cssls")
