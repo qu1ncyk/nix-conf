@@ -49,12 +49,6 @@ return {
     },
   },
   { "akinsho/toggleterm.nvim", opts = {}, cmd = "ToggleTermToggleAll" },
-  {
-    "ahmedkhalf/project.nvim",
-    main = "project_nvim",
-    opts = {},
-    event = "VeryLazy",
-  },
   { "nmac427/guess-indent.nvim", opts = {} },
   { "prichrd/netrw.nvim", opts = {}, event = "VeryLazy" },
   { "lewis6991/gitsigns.nvim", opts = {}, event = "VeryLazy" },

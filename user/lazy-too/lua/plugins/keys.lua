@@ -51,7 +51,6 @@ return {
           { "<leader>k", ":m .-2<CR>==", desc = "Move line up" },
           { "<leader>l", ":Telescope filetypes<CR>", desc = "Programming language" },
           { "<leader>o", ":Telescope oldfiles<CR>", desc = "Old files" },
-          { "<leader>p", ":Telescope projects<CR>", desc = "Telescope projects" },
           {
             "<leader>s",
             function()
