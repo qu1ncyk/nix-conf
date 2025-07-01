@@ -13,8 +13,8 @@ function M.scanner(buf)
 
   local images = {}
   for _, matches in query:iter_matches(root, buf) do
-    local url = vim.treesitter.get_node_text(matches[1], buf)
-    local _, _, end_row, end_col = vim.treesitter.get_node_range(matches[2])
+    local url = vim.treesitter.get_node_text(matches[1][1], buf)
+    local _, _, end_row, end_col = vim.treesitter.get_node_range(matches[2][1])
 
     table.insert(images, {
       data = url,

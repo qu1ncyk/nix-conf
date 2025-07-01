@@ -14,8 +14,8 @@ function M.scanner(buf)
 
   local latex_blocks = {}
   for _, matches in query:iter_matches(root, buf) do
-    local latex_code = vim.treesitter.get_node_text(matches[1], buf)
-    local _, _, end_row, end_col = vim.treesitter.get_node_range(matches[1])
+    local latex_code = vim.treesitter.get_node_text(matches[1][1], buf)
+    local _, _, end_row, end_col = vim.treesitter.get_node_range(matches[1][1])
 
     table.insert(latex_blocks, {
       data = latex_code:gsub("^%$*", ""):gsub("%$*$", ""),
