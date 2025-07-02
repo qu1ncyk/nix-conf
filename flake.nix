@@ -4,8 +4,6 @@
   inputs = {
     stable-nixpkgs.url = "nixpkgs/nixos-25.05";
     unstable-nixpkgs.url = "nixpkgs/nixos-unstable";
-    # https://github.com/NixOS/nixpkgs/pull/309327
-    olympus-nixpkgs.url = "github:Petingoso/nixpkgs/olympus";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "unstable-nixpkgs";
@@ -19,7 +17,6 @@
   outputs = {
     stable-nixpkgs,
     unstable-nixpkgs,
-    olympus-nixpkgs,
     home-manager,
     lazy-too,
     ...
@@ -33,7 +30,6 @@
         ];
     };
     stable-pkgs = stable-nixpkgs.legacyPackages.${system};
-    olympus-pkgs = olympus-nixpkgs.legacyPackages.${system};
     lazy-too' = lazy-too.packages.${system};
   in {
     nixosConfigurations = {
@@ -49,7 +45,7 @@
         modules = [./home.nix];
         extraSpecialArgs = {
           pkgs = unstable-pkgs;
-          inherit stable-pkgs olympus-pkgs;
+          inherit stable-pkgs;
           lazy-too = lazy-too';
         };
       };
