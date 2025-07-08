@@ -12,8 +12,10 @@ return {
   },
   { "kaarmu/typst.vim", ft = "typst" },
   {
-    "MeanderingProgrammer/markdown.nvim",
+    "MeanderingProgrammer/render-markdown.nvim",
     ft = "markdown",
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
     opts = {
       checkbox = {
         checked = { icon = " " },

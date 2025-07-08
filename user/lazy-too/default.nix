@@ -40,6 +40,7 @@
             html
             javascript
             json
+            latex
             lua
             markdown
             matlab
@@ -54,9 +55,17 @@
             vimdoc
           ];
         };
-        image = pkgs.vimPlugins.image-nvim;
-        magick = pkgs.luajitPackages.magick;
-        mathjax = pkgs.mathjax-node-cli;
+        snacks = pkgs.vimPlugins.snacks-nvim.overrideAttrs {
+          inherit (pkgs) typst tectonic;
+          imagemagick = pkgs.imagemagick.override {ghostscriptSupport = true;};
+          patches = [./snacks.patch];
+          postPatch = ''
+            substituteInPlace lua/snacks/image/convert.lua \
+              --subst-var typst \
+              --subst-var tectonic \
+              --subst-var imagemagick
+          '';
+        };
         lspconfig = pkgs.vimPlugins.nvim-lspconfig.overrideAttrs {
           inherit (pkgs) cargo;
           patches = [./lspconfig.patch];

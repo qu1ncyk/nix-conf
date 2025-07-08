@@ -12,9 +12,3 @@ require("opts") -- Options
 require("start-text")
 require("lazy").setup("plugins")
 require("cmds")
-require("graphics").setup({
-  max_size = {
-    cols = 160,
-    rows = 35,
-  },
-})
