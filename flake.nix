@@ -27,6 +27,7 @@
       config.allowUnfreePredicate = pkg:
         builtins.elem (unstable-pkgs.lib.getName pkg) [
           "discord"
+          "parsec-bin"
         ];
     };
     stable-pkgs = stable-nixpkgs.legacyPackages.${system};
