@@ -8,16 +8,5 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [
-      # Common ports for local servers
-      8080
-      3000
-      # Used by Vite
-      4173
-      5173
-    ];
-    checkReversePath = false;
-  };
+  networking.firewall.enable = false;
 }
