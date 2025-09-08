@@ -52,9 +52,6 @@ return {
       null_ls.setup({
         -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
         sources = {
-          null_ls.builtins.formatting.alejandra.with({
-            command = from_nix.nls.alejandra,
-          }),
           null_ls.builtins.formatting.prettier.with({
             command = from_nix.nls.prettier,
           }),

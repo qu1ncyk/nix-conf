@@ -4,6 +4,8 @@ return {
     name = "nvim-lspconfig",
     dir = from_nix.plugins.lspconfig,
     config = function()
+      ---@param lsp string
+      ---@param config vim.lsp.Config?
       local function setup_lsp(lsp, config)
         local cmd = vim.lsp.config[lsp].cmd
         if cmd then
@@ -33,7 +35,15 @@ return {
       setup_lsp("html")
       setup_lsp("jsonls")
       setup_lsp("lua_ls")
-      setup_lsp("nil_ls")
+      setup_lsp("nil_ls", {
+        settings = {
+          ["nil"] = {
+            formatting = {
+              command = { from_nix.nls.alejandra },
+            },
+          },
+        },
+      })
       setup_lsp("omnisharp", { cmd = { from_nix.lsp.omnisharp .. "/bin/OmniSharp" } })
       setup_lsp("pyright")
       setup_lsp("rust_analyzer")
