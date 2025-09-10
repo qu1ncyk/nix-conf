@@ -40,6 +40,7 @@
             html
             javascript
             json
+            julia
             latex
             lua
             markdown
@@ -87,6 +88,12 @@
           [pkgs.ghc pkgs.haskellPackages.haskell-language-server];
         html = pkgs.vscode-langservers-extracted;
         jsonls = pkgs.vscode-langservers-extracted;
+        julia =
+          (pkgs.buildFHSEnv {
+            name = "julia";
+            targetPkgs = ps: [ps.julia];
+            runScript = "julia";
+          });
         lua_ls = pkgs.lua-language-server;
         nil_ls = pkgs.nil;
         omnisharp = pkgs.omnisharp-roslyn;

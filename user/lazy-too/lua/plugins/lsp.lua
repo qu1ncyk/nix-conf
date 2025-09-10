@@ -8,7 +8,7 @@ return {
       ---@param config vim.lsp.Config?
       local function setup_lsp(lsp, config)
         local cmd = vim.lsp.config[lsp].cmd
-        if cmd then
+        if cmd and from_nix.lsp[lsp] then
           local exe = from_nix.lsp[lsp] .. "/bin/" .. cmd[1]
           cmd[1] = exe
         end
@@ -34,6 +34,13 @@ return {
       setup_lsp("hls")
       setup_lsp("html")
       setup_lsp("jsonls")
+      -- Unfortunally, you need to install julials manually:
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#julials
+      setup_lsp("julials", {
+        cmd = vim.tbl_extend("keep", {
+          from_nix.lsp.julia .. "/bin/julia",
+        }, vim.lsp.config.julials.cmd),
+      })
       setup_lsp("lua_ls")
       setup_lsp("nil_ls", {
         settings = {
