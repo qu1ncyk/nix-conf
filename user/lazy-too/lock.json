@@ -102,10 +102,10 @@
       },
       "lf.nvim": {
         "args": {
-          "hash": "sha256-ys3kgXtgaE5OGyNYZ2PuqM9FDGjxfIjRgXBUDBVIjUM=",
-          "owner": "lmburns",
+          "hash": "sha256-TVD/LyVbeNgseSn6UB7aYlQUkE+8CW/TYsEy8tALAf0=",
+          "owner": "graknow",
           "repo": "lf.nvim",
-          "rev": "69ab1efcffee6928bf68ac9bd0c016464d9b2c8b"
+          "rev": "6de7cc63548d2a702a867f77ebd668e3d5918675"
         },
         "fetcher": "fetchFromGitHub"
       },

@@ -12,7 +12,7 @@ return {
     cmd = "NvimTreeToggle",
   },
   {
-    "lmburns/lf.nvim",
+    "graknow/lf.nvim",
     config = function()
       require("lf").setup({})
       vim.api.nvim_create_autocmd("User", {
