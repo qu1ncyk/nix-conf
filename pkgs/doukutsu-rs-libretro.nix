@@ -24,7 +24,6 @@ in
     nativeBuildInputs = [makeWrapper];
 
     cargoHash = "sha256-V5BCBSpp0xMP9lMhhS5vLcYkvxaZPdrLfU00Gw1YbWE=";
-    useFetchCargoVendor = true;
 
     # Derived from:
     # https://github.com/NixOS/nixpkgs/blob/ae584d90cbd0396a422289ee3efb1f1c9d141dc3/pkgs/applications/emulators/retroarch/mkLibretroCore.nix

@@ -1,8 +1,8 @@
 diff --git a/lua/snacks/image/convert.lua b/lua/snacks/image/convert.lua
-index ddc1179..d81ec99 100644
+index e2aaa44e..3f1d1675 100644
 --- a/lua/snacks/image/convert.lua
 +++ b/lua/snacks/image/convert.lua
-@@ -67,7 +67,7 @@ local commands = {
+@@ -81,7 +81,7 @@ local commands = {
      ft = "pdf",
      cmd = {
        {
@@ -11,7 +11,7 @@ index ddc1179..d81ec99 100644
          args = { "compile", "--format", "pdf", "--pages", 1, "{src}", "{file}" },
        },
      },
-@@ -81,7 +81,7 @@ local commands = {
+@@ -95,7 +95,7 @@ local commands = {
      cmd = {
        {
          cwd = "{dirname}",
@@ -20,16 +20,16 @@ index ddc1179..d81ec99 100644
          args = { "-Z", "continue-on-errors", "--outdir", "{cache}", "{src}" },
        },
        {
-@@ -119,7 +119,7 @@ local commands = {
+@@ -133,7 +133,7 @@ local commands = {
      end,
      cmd = {
        {
 -        cmd = "magick",
 +        cmd = "@imagemagick@/bin/magick",
-         args = { "identify", "-format", "%m %[fx:w]x%[fx:h] %xx%y", "{src}[0]" },
+         args = { "identify", "-format", "%m %[fx:w]x%[fx:h] %xx%y", "{src}[{page}]" },
        },
        {
-@@ -176,7 +176,7 @@ local commands = {
+@@ -190,7 +190,7 @@ local commands = {
  
        vim.list_extend(args, { "-write", "{file}", "-identify", "-format", "%m %[fx:w]x%[fx:h] %xx%y", "{file}.info" })
        return {

@@ -1,9 +1,22 @@
+diff --git a/lsp/rust_analyzer.lua b/lsp/rust_analyzer.lua
+index a699c7f4..65587b91 100644
+--- a/lsp/rust_analyzer.lua
++++ b/lsp/rust_analyzer.lua
+@@ -76,7 +76,7 @@ return {
+     end
+ 
+     local cmd = {
+-      'cargo',
++      '@cargo@/bin/cargo',
+       'metadata',
+       '--no-deps',
+       '--format-version',
 diff --git a/lua/lspconfig/configs/rust_analyzer.lua b/lua/lspconfig/configs/rust_analyzer.lua
-index b89546a..9367fc3 100644
+index 79fcad48..df75d0fa 100644
 --- a/lua/lspconfig/configs/rust_analyzer.lua
 +++ b/lua/lspconfig/configs/rust_analyzer.lua
 @@ -48,7 +48,7 @@ return {
-
+ 
        if cargo_crate_dir ~= nil then
          local cmd = {
 -          'cargo',
