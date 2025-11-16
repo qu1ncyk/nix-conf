@@ -10,6 +10,7 @@
   };
 in {
   home.packages = with pkgs; [
+    heroic
     mindustry
     olympus
     parsec-bin
