@@ -2,8 +2,9 @@
   description = "System configuration";
 
   inputs = {
-    stable-nixpkgs.url = "nixpkgs/nixos-25.05";
+    stable-nixpkgs.url = "nixpkgs/nixos-25.11";
     unstable-nixpkgs.url = "nixpkgs/nixos-unstable";
+    sddm-nixpkgs.url = "nixpkgs/nixos-25.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "unstable-nixpkgs";
@@ -17,6 +18,7 @@
   outputs = {
     stable-nixpkgs,
     unstable-nixpkgs,
+    sddm-nixpkgs,
     home-manager,
     lazy-too,
     ...
@@ -32,11 +34,15 @@
     };
     stable-pkgs = stable-nixpkgs.legacyPackages.${system};
     lazy-too' = lazy-too.packages.${system};
+    sddm-pkgs = sddm-nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations = {
       nixos = stable-nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [./configuration.nix];
+        specialArgs = {
+          inherit sddm-pkgs;
+        };
       };
     };
 
