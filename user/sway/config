@@ -96,6 +96,7 @@ exec swayidle -w \
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
+input type:touchpad drag_lock disable
 #
 # Example configuration:
 #
