@@ -3,12 +3,6 @@ return {
   {
     name = "nvim-treesitter",
     dir = from_nix.plugins.treesitter,
-    main = "nvim-treesitter.configs",
-    opts = {
-      highlight = {
-        enable = true,
-      },
-    },
   },
   { "kaarmu/typst.vim", ft = "typst" },
   {

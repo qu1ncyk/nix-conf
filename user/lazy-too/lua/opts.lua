@@ -51,3 +51,9 @@ vim.api.nvim_create_autocmd({ "OptionSet", "BufEnter" }, {
 opt.foldmethod = "indent"
 opt.foldlevel = 99
 vim.g.markdown_folding = true
+
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function()
+    pcall(vim.treesitter.start)
+  end,
+})

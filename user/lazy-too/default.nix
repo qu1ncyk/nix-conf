@@ -28,7 +28,17 @@
         treesitter = pkgs.symlinkJoin {
           name = "Treesitter and parsers";
           paths = with pkgs.vimPlugins.nvim-treesitter-parsers; [
-            pkgs.vimPlugins.nvim-treesitter
+            # nvim-treesitter normally copies queries from `runtime/queries`
+            # to `~/.local/share/nvim/site/queries`
+            # https://github.com/nvim-treesitter/nvim-treesitter/blob/4967fa48b0fe7a7f92cee546c76bb4bb61bb14d5/lua/nvim-treesitter/install.lua#L412
+            (pkgs.vimPlugins.nvim-treesitter.overrideAttrs {
+              fixupPhase = ''
+                # `runtime` is not actually part of the runtimepath,
+                # but the plugin root dir is
+                mv $out/runtime/queries $out
+                rm runtime -r
+              '';
+            })
             bash
             c
             cpp
@@ -88,12 +98,11 @@
           [pkgs.ghc pkgs.haskellPackages.haskell-language-server];
         html = pkgs.vscode-langservers-extracted;
         jsonls = pkgs.vscode-langservers-extracted;
-        julia =
-          (pkgs.buildFHSEnv {
-            name = "julia";
-            targetPkgs = ps: [ps.julia];
-            runScript = "julia";
-          });
+        julia = pkgs.buildFHSEnv {
+          name = "julia";
+          targetPkgs = ps: [ps.julia-bin];
+          runScript = "julia";
+        };
         lua_ls = pkgs.lua-language-server;
         nil_ls = pkgs.nil;
         omnisharp = pkgs.omnisharp-roslyn;
