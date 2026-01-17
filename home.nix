@@ -15,6 +15,7 @@
 
   imports = [
     user/git.nix
+    user/jujutsu.nix
     user/kitty.nix
     user/lf.nix
     user/lazy-too/hm-module.nix
