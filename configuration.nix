@@ -78,6 +78,7 @@
       enable = true;
       #   enableSSHSupport = true;
     };
+    niri.enable = true;
     sway.enable = true;
     steam.enable = true;
   };
