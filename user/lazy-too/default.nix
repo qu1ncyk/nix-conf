@@ -71,7 +71,7 @@
           inherit (pkgs) cargo;
           patches = [./lspconfig.patch];
           postPatch = ''
-            substituteInPlace lua/lspconfig/configs/rust_analyzer.lua \
+            substituteInPlace lsp/rust_analyzer.lua \
               --subst-var cargo
           '';
         };
