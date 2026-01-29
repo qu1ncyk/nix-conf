@@ -40,7 +40,6 @@
     dunst
     file
     gimp
-    keepassxc
     libreoffice
     networkmanagerapplet
     p7zip
@@ -48,8 +47,6 @@
     playerctl
     restic
     ripgrep
-    safeeyes
-    syncthing
     thunderbird
     unzip
     wget
@@ -111,8 +108,17 @@
       enable = true;
       package = pkgs.firefox-devedition;
     };
+    keepassxc = {
+      enable = true;
+      autostart = true;
+    };
     imv.enable = true;
     wofi.enable = true;
+  };
+
+  services = {
+    safeeyes.enable = true;
+    syncthing.enable = true;
   };
 
   xdg = {
@@ -123,8 +129,56 @@
         "application/pdf" = "org.pwmt.zathura.desktop";
       };
     };
+    autostart = let
+      # https://wiki.chucknemeth.com/linux/security/keyring/keepassxc-keyring#disable-gnome-keyring
+      disable-keyring = variant:
+        pkgs.writeTextFile {
+          name = "Disable Gnome Keyring";
+          text = ''
+            [Desktop Entry]
+            Hidden=true
+          '';
+          destination = "/share/applications/gnome-keyring-${variant}.desktop";
+        };
+      disable-keyring-path = variant: "${disable-keyring variant}/share/applications/gnome-keyring-${variant}.desktop";
+    in {
+      enable = true;
+      entries = [
+        "${pkgs.thunderbird}/share/applications/thunderbird.desktop"
+        (disable-keyring-path "pkcs11")
+        (disable-keyring-path "secrets")
+        (disable-keyring-path "ssh")
+      ];
+    };
+    portal = {
+      enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gnome
+        pkgs.xdg-desktop-portal-gtk
+      ];
+      config.niri = {
+        default = ["gnome" "gtk"];
+        # https://www.lshnk.me/2025/12/02/arch-linux-bulletproof-keepassxc-integration-with-rclone-and-secret-service-api/#configure-desktop-portal-waylandflatpak
+        "org.freedesktop.impl.portal.Secret" = "gnome";
+      };
+    };
   };
+
+  dbus.packages = [
+    # https://keepassxc.org/docs/KeePassXC_UserGuide#_enabling_the_integration
+    (pkgs.pkgs.writeTextFile {
+      name = "KeePassXC secret service";
+      text = ''
+        [D-BUS Service]
+        Name=org.freedesktop.secrets
+        Exec=${pkgs.keepassxc}/bin/keepassxc
+      '';
+      destination = "/share/dbus-1/services/org.freedesktop.secrets.service";
+    })
+  ];
+
   home.file.".XCompose".source = user/XCompose;
+  home.file.".config/niri/config.kdl".source = user/niri.kdl;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

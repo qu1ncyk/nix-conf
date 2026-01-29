@@ -8,8 +8,8 @@ in {
       {
         height = 30;
         spacing = 4;
-        modules-left = ["sway/workspaces" "sway/mode" "sway/scratchpad"];
-        modules-center = ["sway/window"];
+        modules-left = ["sway/workspaces" "sway/mode" "sway/scratchpad" "niri/workspaces"];
+        modules-center = ["sway/window" "niri/window"];
         modules-right = [
           "idle_inhibitor"
           "pulseaudio"

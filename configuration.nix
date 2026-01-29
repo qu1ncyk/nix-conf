@@ -64,6 +64,7 @@
   environment.systemPackages = with pkgs; [
     brightnessctl
     cryptsetup
+    xwayland-satellite
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
