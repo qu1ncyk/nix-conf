@@ -57,6 +57,7 @@
     packages.${system} = let
       built-lazy-too = import user/lazy-too {
         pkgs = unstable-pkgs;
+        inherit stable-pkgs;
         lazy-too = lazy-too';
       };
     in {

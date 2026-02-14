@@ -1,6 +1,7 @@
 {
   lazy-too,
   pkgs,
+  stable-pkgs,
 }: let
   wrapWithPath = pkg: pathPkgs:
     pkgs.runCommand "wrap-with-path" {
@@ -103,7 +104,7 @@
           targetPkgs = ps: [ps.julia-bin];
           runScript = "julia";
         };
-        lua_ls = pkgs.lua-language-server;
+        lua_ls = stable-pkgs.lua-language-server;
         nil_ls = pkgs.nil;
         omnisharp = pkgs.omnisharp-roslyn;
         rust_analyzer = wrapWithPath pkgs.rust-analyzer [pkgs.rustc pkgs.cargo];
