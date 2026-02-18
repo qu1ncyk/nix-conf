@@ -1,0 +1,34 @@
+diff --git a/src/main/java/org/rascalmpl/vscode/lsp/BaseWorkspaceService.java b/rascal-lsp/src/main/java/org/rascalmpl/vscode/lsp/BaseWorkspaceService.java
+index 231b43ddc0..2524df5062 100644
+--- a/src/main/java/org/rascalmpl/vscode/lsp/BaseWorkspaceService.java
++++ b/src/main/java/org/rascalmpl/vscode/lsp/BaseWorkspaceService.java
+@@ -101,11 +101,13 @@
+             var fileOperationCapabilities = new FileOperationsServerCapabilities();
+             var whichFiles = new FileOperationOptions(interestedInFiles);
+             boolean watchesSet = false;
+-            if (clientWorkspaceCap.getFileOperations().getDidRename().booleanValue()) {
++            var ops = clientWorkspaceCap.getFileOperations();
++            if (ops != null && ops.getDidRename().booleanValue()) {
+                 fileOperationCapabilities.setDidRename(whichFiles);
+                 watchesSet = true;
+             }
+-            if (clientWorkspaceCap.getFileOperations().getDidDelete().booleanValue()) {
++            ops = clientWorkspaceCap.getFileOperations();
++            if (ops != null && ops.getDidDelete().booleanValue()) {
+                 fileOperationCapabilities.setDidDelete(whichFiles);
+                 watchesSet = true;
+             }
+diff --git a/src/main/java/org/rascalmpl/vscode/lsp/rascal/RascalWorkspaceService.java b/rascal-lsp/src/main/java/org/rascalmpl/vscode/lsp/rascal/RascalWorkspaceService.java
+index 8cf25e00f6..679d6c814d 100644
+--- a/src/main/java/org/rascalmpl/vscode/lsp/rascal/RascalWorkspaceService.java
++++ b/src/main/java/org/rascalmpl/vscode/lsp/rascal/RascalWorkspaceService.java
+@@ -51,7 +51,8 @@
+             ServerCapabilities capabilities) {
+         super.initialize(clientCap, currentWorkspaceFolders, capabilities);
+         var workspaceCapabilities = capabilities.getWorkspace();
+-        if (clientCap.getWorkspace().getFileOperations().getDidCreate().booleanValue()) {
++        var ops = clientCap.getWorkspace().getFileOperations();
++        if (ops != null && ops.getDidCreate().booleanValue()) {
+             workspaceCapabilities.getFileOperations().setDidCreate(new FileOperationOptions(fileFilters));
+         }
+     }

@@ -53,6 +53,7 @@ return {
       })
       setup_lsp("omnisharp", { cmd = { from_nix.lsp.omnisharp .. "/bin/OmniSharp" } })
       setup_lsp("pyright")
+      setup_lsp("rascal_lsp")
       setup_lsp("rust_analyzer")
       setup_lsp("svelte")
       setup_lsp("ts_ls")
