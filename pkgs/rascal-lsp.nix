@@ -6,21 +6,20 @@
 }:
 maven.buildMavenPackage rec {
   pname = "rascal-language-servers";
-  version = "0.13.0";
-  lspVersion = "2.22.0";
+  version = "0.13.1";
+  lspVersion = "2.22.1";
 
   src = fetchFromGitHub {
     owner = "usethesource";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-pBHIk6eH+fBGUWd+1bfztJ92Yf+QNAgIYsRmkdZ2xYk=";
+    hash = "sha256-MdtTbghzNQVqkpYF0BZgpJXlz1fHjWkbVvk7jBRPsKQ=";
   };
   sourceRoot = "source/rascal-lsp";
 
-  mvnHash = "sha256-uhD0jU05RykBAgDeu+5PSUowZfx8Kn//MZ8za4jNorg=";
+  mvnHash = "sha256-6akcR/E/5n6XJDpXzFF+kx5kbuaqx2IiAfDz4XTiw9A=";
   doCheck = false;
 
-  patches = [./rascal-lsp.patch];
   nativeBuildInputs = [makeWrapper];
 
   installPhase = ''
