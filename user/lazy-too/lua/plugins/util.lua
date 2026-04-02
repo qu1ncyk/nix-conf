@@ -26,9 +26,23 @@ return {
   },
   {
     "windwp/nvim-autopairs",
-    opts = {
-      enable_check_bracket_line = false,
-    },
+    config = function()
+      local autopairs = require("nvim-autopairs")
+      local cond = require("nvim-autopairs.conds")
+      local Rule = require("nvim-autopairs.rule")
+
+      local ignored_next_char = [=[[%w%%%'%[%"%.%`]]=]
+      autopairs.setup({
+        enable_moveright = false,
+        ignored_next_char = ignored_next_char,
+      })
+      autopairs.add_rules({
+        Rule("$", "$", "typst")
+          :with_pair(cond.not_after_regex(ignored_next_char))
+          :with_pair(cond.not_before_regex([=[[%w%%%'%"%.%`]]=]))
+          :with_pair(cond.not_add_quote_inside_quote()),
+      })
+    end,
     event = "InsertEnter",
   },
   {
