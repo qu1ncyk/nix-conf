@@ -32,6 +32,7 @@
   home.packages = with pkgs; [
     bluetuith
     discord
+    docker-credential-helpers
     dunst
     file
     gimp

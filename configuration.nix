@@ -53,7 +53,7 @@
   users.users.quincy = {
     isNormalUser = true;
     description = "Quincy";
-    extraGroups = ["networkmanager" "wheel" "audio" "docker"];
+    extraGroups = ["networkmanager" "wheel" "audio"];
   };
 
   # Allow unfree packages
