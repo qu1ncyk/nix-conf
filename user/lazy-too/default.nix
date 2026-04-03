@@ -108,7 +108,7 @@
         nil_ls = pkgs.nil;
         omnisharp = pkgs.omnisharp-roslyn;
         rascal_lsp = pkgs.callPackage ../../pkgs/rascal-lsp.nix {};
-        rust_analyzer = wrapWithPath pkgs.rust-analyzer [pkgs.rustc pkgs.cargo];
+        rust_analyzer = wrapWithPath pkgs.rust-analyzer [pkgs.rustc pkgs.cargo pkgs.rustfmt];
         svelte = pkgs.nodePackages.svelte-language-server;
         ts_ls = pkgs.nodePackages.typescript-language-server;
         # unocss = pkgs.unocss;
