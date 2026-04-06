@@ -17,7 +17,7 @@ maven.buildMavenPackage rec {
   };
   sourceRoot = "source/rascal-lsp";
 
-  mvnHash = "sha256-6akcR/E/5n6XJDpXzFF+kx5kbuaqx2IiAfDz4XTiw9A=";
+  mvnHash = "sha256-AVfMZZ/UQ1Z7T1pamZCGfzq8zkXEP1N4YHDO8440IrA=";
   doCheck = false;
 
   nativeBuildInputs = [makeWrapper];

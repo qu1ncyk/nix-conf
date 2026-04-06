@@ -109,15 +109,15 @@
         omnisharp = pkgs.omnisharp-roslyn;
         rascal_lsp = pkgs.callPackage ../../pkgs/rascal-lsp.nix {};
         rust_analyzer = wrapWithPath pkgs.rust-analyzer [pkgs.rustc pkgs.cargo pkgs.rustfmt];
-        svelte = pkgs.nodePackages.svelte-language-server;
-        ts_ls = pkgs.nodePackages.typescript-language-server;
+        svelte = pkgs.svelte-language-server;
+        ts_ls = pkgs.typescript-language-server;
         # unocss = pkgs.unocss;
       };
       nls = {
         alejandra = pkgs.alejandra + "/bin/alejandra";
         autopep8 = pkgs.python312Packages.autopep8 + "/bin/autopep8";
         flake8 = pkgs.python312Packages.flake8 + "/bin/flake8";
-        prettier = pkgs.nodePackages.prettier + "/bin/prettier";
+        prettier = pkgs.prettier + "/bin/prettier";
         stylua = pkgs.stylua + "/bin/stylua";
       };
       dap = {
