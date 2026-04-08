@@ -22,6 +22,7 @@
     user/games.nix
     user/sway
     user/systemd
+    user/ui.nix
     user/waybar
     user/zathura.nix
     user/zk.nix
@@ -71,8 +72,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-
-  home.file.".icons/default".source = "${pkgs.adwaita-icon-theme}/share/icons/Adwaita";
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. If you don't want to manage your shell through Home
