@@ -5,6 +5,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    system/fprint.nix
     system/sddm.nix
     # system/dnscrypt.nix
     system/docker.nix
