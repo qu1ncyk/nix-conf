@@ -102,6 +102,7 @@
     firefox = {
       enable = true;
       package = pkgs.firefox-devedition;
+      configPath = ".mozilla/firefox";
     };
     keepassxc = {
       enable = true;
