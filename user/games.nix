@@ -15,6 +15,7 @@ in {
     olympus
     parsec-bin
     prismlauncher
+    r2modman
     retroarch
   ];
 }
