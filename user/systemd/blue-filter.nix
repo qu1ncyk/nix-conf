@@ -11,7 +11,7 @@
           buildInputs = [pkgs.makeWrapper];
         }
         ''
-          makeWrapper ${../sway/blue-filter} $out --prefix PATH : ${pkgs.sunwait}
+          makeWrapper ${../sway/blue-filter} $out --prefix PATH : ${pkgs.sunwait}/bin
         '';
     };
   };
