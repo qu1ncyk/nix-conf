@@ -39,10 +39,10 @@
       },
       "cmp-git": {
         "args": {
-          "hash": "sha256-ufbqLLgcRDoSG2XTqmMRcaHG120wtUqtovIrhLwXZ3k=",
+          "hash": "sha256-6gxJkiJqUMB2xKx3z7v4OVUCFHDml8F7Ffs2JwiXo00=",
           "owner": "petertriho",
           "repo": "cmp-git",
-          "rev": "b24309c386c9666c549a1abaedd4956541676d06"
+          "rev": "e645f69b93eede43fb644bb1a0b1db3eef1108a3"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -67,10 +67,11 @@
       "cmp_luasnip": {
         "args": {
           "hash": "sha256-86lKQPPyqFz8jzuLajjHMKHrYnwW6+QOcPyQEx6B+gw=",
-          "rev": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90",
-          "url": "https://github.com/saadparwaiz1/cmp_luasnip.git"
+          "owner": "saadparwaiz1",
+          "repo": "cmp_luasnip",
+          "rev": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90"
         },
-        "fetcher": "fetchgit"
+        "fetcher": "fetchFromGitHub"
       },
       "gitsigns.nvim": {
         "args": {
@@ -128,37 +129,37 @@
       },
       "mini.icons": {
         "args": {
-          "hash": "sha256-/arujhZe9m9VB5nZ0xzCZjkxu4ai9Rfit7y6RwrLf7s=",
+          "hash": "sha256-Q61iFTDA2groQu3qMNJu0yuVnB6NtsGNihpGD5ppeuI=",
           "owner": "echasnovski",
           "repo": "mini.icons",
-          "rev": "bac6317300e205335df425296570d84322730067"
+          "rev": "520995f1d75da0e4cc901ee95080b1ff2bc46b94"
         },
         "fetcher": "fetchFromGitHub"
       },
       "netrw.nvim": {
         "args": {
-          "hash": "sha256-tEO+omzlaC0uFkIHebeqnGtiPbDelRTBJONEnTy0F9U=",
+          "hash": "sha256-Sc02VHx9U8lW5YWG7GkvmYwvZL9WBlsnYdmSPZnulVk=",
           "owner": "prichrd",
           "repo": "netrw.nvim",
-          "rev": "90501c62b9b816ed3ed1e912ae9db9af5671a1b2"
+          "rev": "3f643df59951d9adc4cf348cefe435fcdb5a3671"
         },
         "fetcher": "fetchFromGitHub"
       },
       "none-ls.nvim": {
         "args": {
-          "hash": "sha256-tplnARSDuc9dkaai6/rm2kS+5jTWmVQXWvJ+Ij9HmQs=",
+          "hash": "sha256-gMncplPHwy6MgQQRU/Niqh4YR3vfas34Ehz6p1PUOBQ=",
           "owner": "nvimtools",
           "repo": "none-ls.nvim",
-          "rev": "241ff8214b4ec051eb51e74a61ff729c0271b429"
+          "rev": "f9d557ac7cd28a3a993b5ea49716498bd540b01f"
         },
         "fetcher": "fetchFromGitHub"
       },
       "nvim-autopairs": {
         "args": {
-          "hash": "sha256-0IqXpxKCzqVz6i9QajPYJ0FdfReHQBhehrvN89/8n6U=",
+          "hash": "sha256-klOJgBPw8oGDnF9wKIpGDzuBY+tH1acRyvZSPR4wrjw=",
           "owner": "windwp",
           "repo": "nvim-autopairs",
-          "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5"
+          "rev": "7b9923abad60b903ece7c52940e1321d39eccc79"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -191,10 +192,10 @@
       },
       "nvim-lspconfig": {
         "args": {
-          "hash": "sha256-Iox/cnIsgPXB6KYhuy5j2zYHudMCcdQRKWX9DTlIcoo=",
+          "hash": "sha256-zN51gdV4PExR9j1idlHwnl2WMwXo6OaTM3VtWHy1u2k=",
           "owner": "neovim",
           "repo": "nvim-lspconfig",
-          "rev": "31026a13eefb20681124706a79fc1df6bf11ab27"
+          "rev": "246572944c2a1e2a646c2e7609ff619b0fe74c18"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -209,10 +210,10 @@
       },
       "nvim-tree.lua": {
         "args": {
-          "hash": "sha256-MgYlvwZXxgjvPJHKcVzpKp8tlaRuhO6TAbTudW0J41g=",
+          "hash": "sha256-ao0a2zszbZEXOEIS4fbFRAsoBiQDRpD90k/mTqcUBX4=",
           "owner": "nvim-tree",
           "repo": "nvim-tree.lua",
-          "rev": "f9bfc0059eca24546b69a7006110463da4808f8f"
+          "rev": "07f541fcaa4a5ae019598240362449ab7e9812b3"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -227,10 +228,10 @@
       },
       "nvim-web-devicons": {
         "args": {
-          "hash": "sha256-ESwmag9Ns7RkWqINIVKOmj26XG1Z6NAnfK2N+T7djPA=",
+          "hash": "sha256-zUSPl8h2hFr/sIxWNz3Fxq1g68Guyy++bkHlkzwrKJc=",
           "owner": "nvim-tree",
           "repo": "nvim-web-devicons",
-          "rev": "4fc505ac7bd7692824a142e96e5f529c133862f8"
+          "rev": "7d8dad2c837fcdf2e65997e68657c1a21c568074"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -254,10 +255,10 @@
       },
       "render-markdown.nvim": {
         "args": {
-          "hash": "sha256-dh4gBQVRTa1DgOvKN8NFMQ9e1E8rbrkTvlJH9nN9S6Y=",
+          "hash": "sha256-IBqQmerjJz9g0QR/Elym7WsNuk1scLaeI9isvjcCFqw=",
           "owner": "MeanderingProgrammer",
           "repo": "render-markdown.nvim",
-          "rev": "3f3eea97b80839f629c951ca660ffd125bfa5b34"
+          "rev": "629eb9533ec989d9d5c6cab8f3ad5372422c24e0"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -272,10 +273,10 @@
       },
       "telescope.nvim": {
         "args": {
-          "hash": "sha256-JPwaWFjW4W5ZKAnKEkMnK41JS4omsKYxmRerGMGALDc=",
+          "hash": "sha256-+e/ijnuw0Zrj+zcfO2iRusukD4WHrgVC5reOTNk/04o=",
           "owner": "nvim-telescope",
           "repo": "telescope.nvim",
-          "rev": "ec009610d5d259ec59a6edf0219ef3f7ee4732e5"
+          "rev": "7d324792b7943e4aa16ad007212e6acc6f9fe335"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -291,10 +292,11 @@
       "typst.vim": {
         "args": {
           "hash": "sha256-qKY+tE7zCP7UNUeeesGGS5zJ9nudCJiQosLaI/TtD08=",
-          "rev": "1d5436c0f55490893892441c0eca55e6cdf4916c",
-          "url": "https://github.com/kaarmu/typst.vim.git"
+          "owner": "kaarmu",
+          "repo": "typst.vim",
+          "rev": "1d5436c0f55490893892441c0eca55e6cdf4916c"
         },
-        "fetcher": "fetchgit"
+        "fetcher": "fetchFromGitHub"
       },
       "vscode.nvim": {
         "args": {
@@ -316,10 +318,10 @@
       },
       "zk-nvim": {
         "args": {
-          "hash": "sha256-W5cSp/RFbUaGhtvfowaCASfOa0mrqfxxRGR23Bt07FQ=",
+          "hash": "sha256-cq76bVNyoK1Oi0d61Wa3B3iFvLzboozZaZlWBTJik5U=",
           "owner": "zk-org",
           "repo": "zk-nvim",
-          "rev": "dea1ee6cd6d07568c92ea8353063d4d85c58a964"
+          "rev": "bc3b39374b25fad977cecc936588cb060f15a773"
         },
         "fetcher": "fetchFromGitHub"
       }
