@@ -10,6 +10,7 @@
   };
 in {
   home.packages = with pkgs; [
+    archipelago
     heroic
     mindustry
     olympus
