@@ -57,7 +57,15 @@ return {
       setup_lsp("omnisharp", { cmd = { from_nix.lsp.omnisharp .. "/bin/OmniSharp" } })
       setup_lsp("pyright")
       setup_lsp("rascal_lsp")
-      setup_lsp("rust_analyzer")
+      setup_lsp("rust_analyzer", {
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = {
+              sysroot = from_nix.lsp.rustc,
+            },
+          },
+        },
+      })
       setup_lsp("svelte")
       setup_lsp("ts_ls", {
         cmd = { from_nix.lsp.ts_ls .. "/bin/vscode-json-language-server", "--stdio" },

@@ -89,7 +89,7 @@
       };
 
       lsp = {
-        inherit (pkgs) pyright tinymist;
+        inherit (pkgs) pyright tinymist rustc;
         clangd = pkgs.llvmPackages_18.clang-tools;
         cssls = pkgs.vscode-langservers-extracted;
         emmet_language_server = wrapWithPath pkgs.emmet-language-server [pkgs.nodejs];
