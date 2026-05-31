@@ -2,7 +2,7 @@
   description = "System configuration";
 
   inputs = {
-    stable-nixpkgs.url = "nixpkgs/nixos-25.11";
+    stable-nixpkgs.url = "nixpkgs/nixos-26.05";
     unstable-nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";

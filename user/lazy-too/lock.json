@@ -3,10 +3,10 @@
     "git": {
       "LuaSnip": {
         "args": {
-          "hash": "sha256-faK+6aY+RDZ3imFfPIDL3ZMurDjq8NIHMPxmp4y6FdI=",
+          "hash": "sha256-5Dm5maKjGcduew/cUZTWeyyVEgpZ0OpoVdMRYEw8Li0=",
           "owner": "L3MON4D3",
           "repo": "LuaSnip",
-          "rev": "a62e1083a3cfe8b6b206e7d3d33a51091df25357"
+          "rev": "0abc8f390b278c3b4aabc4c004ac8a088b65cf24"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -111,10 +111,10 @@
       },
       "lualine.nvim": {
         "args": {
-          "hash": "sha256-5+JKZD4w80QZxnFv+1OxkFVety8fgmcGVOuxfYouxhI=",
+          "hash": "sha256-6PjGu30Ed4/e/HQ3mIFQuUOxcCiti/71jjlMsjN7EoA=",
           "owner": "nvim-lualine",
           "repo": "lualine.nvim",
-          "rev": "131a558e13f9f28b15cd235557150ccb23f89286"
+          "rev": "221ce6b2d999187044529f49da6554a92f740a96"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -174,10 +174,10 @@
       },
       "nvim-dap": {
         "args": {
-          "hash": "sha256-9NF0+QoHOEAg6pd+oRBxr3ExWLqbvRrIMoMSZvNdqX4=",
+          "hash": "sha256-pgD51NWFyjK1FrXZ8MFFIM9DX2OBxL7cd7JlST2Twvc=",
           "owner": "mfussenegger",
           "repo": "nvim-dap",
-          "rev": "45a69eba683a2c448dd9ecfc4de89511f0646b5f"
+          "rev": "531771530d4f82ad2d21e436e3cc052d68d7aebb"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -192,10 +192,10 @@
       },
       "nvim-lspconfig": {
         "args": {
-          "hash": "sha256-zN51gdV4PExR9j1idlHwnl2WMwXo6OaTM3VtWHy1u2k=",
+          "hash": "sha256-KnZQMIp9qzZitsrwcx9Nty3V5KkszSbWJog/m5opMFg=",
           "owner": "neovim",
           "repo": "nvim-lspconfig",
-          "rev": "246572944c2a1e2a646c2e7609ff619b0fe74c18"
+          "rev": "9573948c38bfabeec353ae7dd7d3ffec4c506a6b"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -228,10 +228,10 @@
       },
       "nvim-web-devicons": {
         "args": {
-          "hash": "sha256-zUSPl8h2hFr/sIxWNz3Fxq1g68Guyy++bkHlkzwrKJc=",
+          "hash": "sha256-pcU69LrhXFgXcvxbsBqLkUhgYEVGjMUDmEjaKZTSv+0=",
           "owner": "nvim-tree",
           "repo": "nvim-web-devicons",
-          "rev": "7d8dad2c837fcdf2e65997e68657c1a21c568074"
+          "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c"
         },
         "fetcher": "fetchFromGitHub"
       },
@@ -255,19 +255,19 @@
       },
       "render-markdown.nvim": {
         "args": {
-          "hash": "sha256-IBqQmerjJz9g0QR/Elym7WsNuk1scLaeI9isvjcCFqw=",
+          "hash": "sha256-vB8rFNSUW9pcBiCjtsA+LRbuysP8HnpsCQHPEFyHTrM=",
           "owner": "MeanderingProgrammer",
           "repo": "render-markdown.nvim",
-          "rev": "629eb9533ec989d9d5c6cab8f3ad5372422c24e0"
+          "rev": "5adf0895310c1904e5abfaad40a2baad7fe44a07"
         },
         "fetcher": "fetchFromGitHub"
       },
       "snacks.nvim": {
         "args": {
-          "hash": "sha256-7lDH1JlTM+H/LWjMlAQPNY6A+xmS/cp+wChy4buGYIU=",
+          "hash": "sha256-gU0XjCcnmZNwZ/erukA8miBiMKaSsSiInLtiv+OyEJI=",
           "owner": "folke",
           "repo": "snacks.nvim",
-          "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e"
+          "rev": "882c996cf28183f4d63640de0b4c02ec886d01f2"
         },
         "fetcher": "fetchFromGitHub"
       },
