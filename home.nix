@@ -32,7 +32,6 @@
   # environment.
   home.packages = with pkgs; [
     bluetuith
-    discord
     docker-credential-helpers
     dunst
     file
@@ -50,6 +49,7 @@
     wl-clipboard
     wl-clipboard-x11
     wl-mirror
+    vesktop
     vlc
     xdg-utils
     zip
