@@ -1,15 +1,22 @@
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    (sddm-chili-theme.override {
-      themeConfig = {
-        background = "${../user/sway/background.png}";
-      };
-    })
-  ];
+  programs.silentSDDM = {
+    enable = true;
+    theme = "default";
+    backgrounds.bg = "${../user/sway}/background.png";
+    settings = {
+      LoginScreen.background = "background.png";
+      LockScreen.background = "background.png";
+    };
+  };
+
+  environment.systemPackages = [pkgs.adwaita-icon-theme];
 
   services.displayManager.sddm = {
-    enable = true;
-    theme = "chili";
-    wayland.enable = true;
+    settings = {
+      Theme.CursorTheme = "Adwaita";
+      Theme.CursorSize = 24;
+    };
+    # Cursor is broken on weston
+    wayland.compositor = "kwin";
   };
 }

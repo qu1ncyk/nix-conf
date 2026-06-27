@@ -12,6 +12,10 @@
       # url = "path:/home/quincy/Code/lazy-too";
       url = "github:qu1ncyk/lazy-too";
     };
+    silentSDDM = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "stable-nixpkgs";
+    };
   };
 
   outputs = {
@@ -19,6 +23,7 @@
     unstable-nixpkgs,
     home-manager,
     lazy-too,
+    silentSDDM,
     ...
   }: let
     system = "x86_64-linux";
@@ -35,7 +40,7 @@
     nixosConfigurations = {
       nixos = stable-nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [./configuration.nix];
+        modules = [./configuration.nix silentSDDM.nixosModules.default];
       };
     };
 
