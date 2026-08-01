@@ -84,6 +84,7 @@
           postPatch = ''
             substituteInPlace lsp/* \
               --subst-var cargo \
+              --subst-var-by svelte-language-server ${pkgs.svelte-language-server} \
               --subst-var-by typescript-go ${pkgs.typescript-go} \
               --subst-var-by typescript-language-server ${pkgs.typescript-language-server} \
               --subst-var-by vscode-langservers-extracted ${pkgs.vscode-langservers-extracted}
@@ -109,7 +110,6 @@
         omnisharp = pkgs.omnisharp-roslyn;
         rascal_lsp = pkgs.callPackage ../../pkgs/rascal-lsp.nix {};
         rust_analyzer = wrapWithPath pkgs.rust-analyzer [pkgs.rustc pkgs.cargo pkgs.rustfmt];
-        svelte = pkgs.svelte-language-server;
         # unocss = pkgs.unocss;
       };
       nls = {

@@ -50,6 +50,19 @@ index 3ac1618..c3e35e0 100644
        'metadata',
        '--no-deps',
        '--format-version',
+diff --git a/lsp/svelte.lua b/lsp/svelte.lua
+index 460f61f..d5fb57b 100644
+--- a/lsp/svelte.lua
++++ b/lsp/svelte.lua
+@@ -12,7 +12,7 @@
+ ---@type vim.lsp.Config
+ return {
+   cmd = function(dispatchers, config)
+-    local cmd = 'svelteserver'
++    local cmd = '@svelte-language-server@/bin/svelteserver'
+     if (config or {}).root_dir then
+       local local_cmd = vim.fs.joinpath(config.root_dir, 'node_modules/.bin', cmd)
+       if vim.fn.executable(local_cmd) == 1 then
 diff --git a/lsp/ts_ls.lua b/lsp/ts_ls.lua
 index d86a514..1d87838 100644
 --- a/lsp/ts_ls.lua
