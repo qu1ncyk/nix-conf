@@ -15,4 +15,5 @@ libfprint.overrideAttrs (finalAttrs: prevAttrs: {
   # Needed for patching shebangs
   buildInputs = prevAttrs.buildInputs ++ [python3];
   doInstallCheck = false;
+  patches = [];
 })

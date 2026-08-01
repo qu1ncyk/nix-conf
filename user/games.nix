@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  stable-pkgs,
+  ...
+}: let
   doukutsu = pkgs.callPackage ../pkgs/doukutsu-rs-libretro.nix {};
   retroarch = pkgs.retroarch-bare.wrapper {
     cores = with pkgs.libretro; [
@@ -12,7 +16,7 @@ in {
   home.packages = with pkgs; [
     archipelago
     heroic
-    mindustry
+    stable-pkgs.mindustry
     olympus
     parsec-bin
     prismlauncher
