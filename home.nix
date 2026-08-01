@@ -98,7 +98,12 @@
       };
     };
     bashmount.enable = true;
-    btop.enable = true;
+    btop = {
+      enable = true;
+      package = pkgs.btop.override {
+        rocmSupport = true;
+      };
+    };
     firefox = {
       enable = true;
       package = pkgs.firefox-devedition;
