@@ -8,7 +8,7 @@ return {
       ---@param config vim.lsp.Config?
       local function setup_lsp(lsp, config)
         local cmd = vim.lsp.config[lsp].cmd
-        if cmd and from_nix.lsp[lsp] and not (config and config.cmd) then
+        if cmd and type(cmd) == "table" and from_nix.lsp[lsp] and not (config and config.cmd) then
           local exe = from_nix.lsp[lsp] .. "/bin/" .. cmd[1]
           cmd[1] = exe
         end
@@ -23,20 +23,14 @@ return {
         vim.lsp.enable(lsp)
       end
 
-      setup_lsp("cssls", {
-        cmd = { from_nix.lsp.cssls .. "/bin/vscode-css-language-server", "--stdio" },
-      })
+      setup_lsp("cssls")
       setup_lsp("clangd", {
         cmd = { from_nix.lsp.clangd .. "/bin/clangd", "--header-insertion=never" },
       })
       setup_lsp("emmet_language_server")
       setup_lsp("hls")
-      setup_lsp("html", {
-        cmd = { from_nix.lsp.html .. "/bin/vscode-html-language-server", "--stdio" },
-      })
-      setup_lsp("jsonls", {
-        cmd = { from_nix.lsp.jsonls .. "/bin/vscode-json-language-server", "--stdio" },
-      })
+      setup_lsp("html")
+      setup_lsp("jsonls")
       -- Unfortunally, you need to install julials manually:
       -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#julials
       setup_lsp("julials", {
@@ -67,9 +61,8 @@ return {
         },
       })
       setup_lsp("svelte")
-      setup_lsp("ts_ls", {
-        cmd = { from_nix.lsp.ts_ls .. "/bin/vscode-json-language-server", "--stdio" },
-      })
+      -- setup_lsp("ts_ls")
+      setup_lsp("tsgo")
       -- https://github.com/Myriad-Dreamin/tinymist/issues/638#issuecomment-2395941103
       setup_lsp("tinymist", { single_file_support = true, offset_encoding = "utf-8" })
       -- setup_lsp("unocss", {

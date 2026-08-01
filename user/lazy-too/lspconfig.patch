@@ -1,8 +1,47 @@
+diff --git a/lsp/cssls.lua b/lsp/cssls.lua
+index 8333628..52689ed 100644
+--- a/lsp/cssls.lua
++++ b/lsp/cssls.lua
+@@ -23,7 +23,7 @@
+ ---@type vim.lsp.Config
+ return {
+   cmd = function(dispatchers, config)
+-    local cmd = 'vscode-css-language-server'
++    local cmd = '@vscode-langservers-extracted@/bin/vscode-css-language-server'
+     if (config or {}).root_dir then
+       local local_cmd = vim.fs.joinpath(config.root_dir, 'node_modules/.bin', cmd)
+       if vim.fn.executable(local_cmd) == 1 then
+diff --git a/lsp/html.lua b/lsp/html.lua
+index bc7bcba..7f02cd4 100644
+--- a/lsp/html.lua
++++ b/lsp/html.lua
+@@ -25,7 +25,7 @@
+ ---@type vim.lsp.Config
+ return {
+   cmd = function(dispatchers, config)
+-    local cmd = 'vscode-html-language-server'
++    local cmd = '@vscode-langservers-extracted@/bin/vscode-html-language-server'
+     if (config or {}).root_dir then
+       local local_cmd = vim.fs.joinpath(config.root_dir, 'node_modules/.bin', cmd)
+       if vim.fn.executable(local_cmd) == 1 then
+diff --git a/lsp/jsonls.lua b/lsp/jsonls.lua
+index b86289e..23fd59d 100644
+--- a/lsp/jsonls.lua
++++ b/lsp/jsonls.lua
+@@ -24,7 +24,7 @@
+ ---@type vim.lsp.Config
+ return {
+   cmd = function(dispatchers, config)
+-    local cmd = 'vscode-json-language-server'
++    local cmd = '@vscode-langservers-extracted@/bin/vscode-json-language-server'
+     if (config or {}).root_dir then
+       local local_cmd = vim.fs.joinpath(config.root_dir, 'node_modules/.bin', cmd)
+       if vim.fn.executable(local_cmd) == 1 then
 diff --git a/lsp/rust_analyzer.lua b/lsp/rust_analyzer.lua
-index a699c7f4..65587b91 100644
+index 3ac1618..c3e35e0 100644
 --- a/lsp/rust_analyzer.lua
 +++ b/lsp/rust_analyzer.lua
-@@ -76,7 +76,7 @@ return {
+@@ -105,7 +105,7 @@ return {
      end
  
      local cmd = {
@@ -11,11 +50,37 @@ index a699c7f4..65587b91 100644
        'metadata',
        '--no-deps',
        '--format-version',
+diff --git a/lsp/ts_ls.lua b/lsp/ts_ls.lua
+index d86a514..1d87838 100644
+--- a/lsp/ts_ls.lua
++++ b/lsp/ts_ls.lua
+@@ -77,7 +77,7 @@
+ return {
+   init_options = { hostInfo = 'neovim' },
+   cmd = function(dispatchers, config)
+-    local cmd = 'typescript-language-server'
++    local cmd = '@typescript-language-server@/bin/typescript-language-server'
+     if (config or {}).root_dir then
+       local local_cmd = vim.fs.joinpath(config.root_dir, 'node_modules/.bin', cmd)
+       if vim.fn.executable(local_cmd) == 1 then
+diff --git a/lsp/tsgo.lua b/lsp/tsgo.lua
+index fc455ec..c5946d8 100644
+--- a/lsp/tsgo.lua
++++ b/lsp/tsgo.lua
+@@ -62,7 +62,7 @@ return {
+     },
+   },
+   cmd = function(dispatchers, config)
+-    local cmd = 'tsgo'
++    local cmd = '@typescript-go@/bin/tsgo'
+     if (config or {}).root_dir then
+       local local_cmd = vim.fs.joinpath(config.root_dir, 'node_modules/.bin', cmd)
+       if vim.fn.executable(local_cmd) == 1 then
 diff --git a/lua/lspconfig/configs/rust_analyzer.lua b/lua/lspconfig/configs/rust_analyzer.lua
-index 79fcad48..df75d0fa 100644
+index 0b1d3fb..515ebd1 100644
 --- a/lua/lspconfig/configs/rust_analyzer.lua
 +++ b/lua/lspconfig/configs/rust_analyzer.lua
-@@ -48,7 +48,7 @@ return {
+@@ -55,7 +55,7 @@ return {
  
        if cargo_crate_dir ~= nil then
          local cmd = {

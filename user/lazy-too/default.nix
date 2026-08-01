@@ -82,8 +82,11 @@
           inherit (pkgs) cargo;
           patches = [./lspconfig.patch];
           postPatch = ''
-            substituteInPlace lsp/rust_analyzer.lua \
-              --subst-var cargo
+            substituteInPlace lsp/* \
+              --subst-var cargo \
+              --subst-var-by typescript-go ${pkgs.typescript-go} \
+              --subst-var-by typescript-language-server ${pkgs.typescript-language-server} \
+              --subst-var-by vscode-langservers-extracted ${pkgs.vscode-langservers-extracted}
           '';
         };
       };
@@ -91,14 +94,11 @@
       lsp = {
         inherit (pkgs) pyright tinymist rustc;
         clangd = pkgs.llvmPackages_18.clang-tools;
-        cssls = pkgs.vscode-langservers-extracted;
         emmet_language_server = wrapWithPath pkgs.emmet-language-server [pkgs.nodejs];
         hls =
           wrapWithPath pkgs.haskellPackages.haskell-language-server
           # hls needs itself in the PATH or else the wrapper cannot find it
           [pkgs.ghc pkgs.haskellPackages.haskell-language-server];
-        html = pkgs.vscode-langservers-extracted;
-        jsonls = pkgs.vscode-langservers-extracted;
         julia = pkgs.buildFHSEnv {
           name = "julia";
           targetPkgs = ps: [ps.julia-bin];
@@ -110,7 +110,6 @@
         rascal_lsp = pkgs.callPackage ../../pkgs/rascal-lsp.nix {};
         rust_analyzer = wrapWithPath pkgs.rust-analyzer [pkgs.rustc pkgs.cargo pkgs.rustfmt];
         svelte = pkgs.svelte-language-server;
-        ts_ls = pkgs.typescript-language-server;
         # unocss = pkgs.unocss;
       };
       nls = {
