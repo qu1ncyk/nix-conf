@@ -90,6 +90,14 @@
               --subst-var-by vscode-langservers-extracted ${pkgs.vscode-langservers-extracted}
           '';
         };
+        lean = pkgs.vimPlugins.lean-nvim.overrideAttrs {
+          inherit (pkgs) lean4;
+          patches = [./lean-nvim.patch];
+          postPatch = ''
+            substituteInPlace lsp/leanls.lua \
+              --subst-var lean4
+          '';
+        };
       };
 
       lsp = {

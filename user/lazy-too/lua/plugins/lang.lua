@@ -19,4 +19,10 @@ return {
       },
     },
   },
+  {
+    name = "lean.nvim",
+    dir = from_nix.plugins.lean,
+    ft = "lean",
+    opts = {},
+  },
 }
