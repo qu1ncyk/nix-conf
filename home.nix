@@ -43,6 +43,7 @@
     playerctl
     restic
     ripgrep
+    signal-desktop
     thunderbird
     unzip
     wget
