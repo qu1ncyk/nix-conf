@@ -45,6 +45,9 @@ return {
           { "<leader>dd", vim.diagnostic.open_float, desc = "Diagnostics" },
           { "<leader>dj", vim.diagnostic.goto_prev, desc = "Next diagnostic" },
           { "<leader>dk", vim.diagnostic.goto_next, desc = "Previous diagnostic" },
+          { "<leader>dK", function ()
+            require("dapui").eval()
+          end, desc = "Show debugger value" },
           { "<leader>f", ":Telescope find_files<CR>", desc = "Telescope files" },
           { "<leader>m", ":Lf<CR>", desc = "Manage files (lf)" },
           { "<leader>j", ":m .+1<CR>==", desc = "Move line down" },

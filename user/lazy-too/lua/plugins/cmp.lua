@@ -10,6 +10,7 @@ return {
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
       "petertriho/cmp-git",
+      "rcarriga/cmp-dap",
     },
     event = { "InsertEnter", "CmdlineEnter" },
     config = function(_, opts)
@@ -69,6 +70,9 @@ return {
         }, {
           { name = "buffer" },
         }),
+        enabled = function()
+          return vim.api.nvim_get_option_value("buftype", {}) ~= "prompt" or require("cmp_dap").is_dap_buffer()
+        end,
       })
 
       -- Set configuration for specific filetype.
@@ -96,6 +100,18 @@ return {
         }, {
           { name = "cmdline" },
         }),
+      })
+
+      cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+        sources = {
+          { name = "dap" },
+        },
+        mapping = {
+          ["<C-Space>"] = cmp.mapping.complete(),
+        },
+        completion = {
+          trigger_characters = { " " },
+        },
       })
     end,
   },
