@@ -91,6 +91,9 @@
           '';
         };
         lean = pkgs.vimPlugins.lean-nvim;
+        cmp_dap = pkgs.vimPlugins.cmp-dap.overrideAttrs {
+          patches = [./cmp-dap.patch];
+        };
       };
 
       lsp = {

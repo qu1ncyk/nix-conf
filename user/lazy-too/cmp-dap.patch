@@ -1,0 +1,15 @@
+diff --git a/lua/cmp_dap/init.lua b/lua/cmp_dap/init.lua
+index aa67701..b04ed09 100644
+--- a/lua/cmp_dap/init.lua
++++ b/lua/cmp_dap/init.lua
+@@ -115,6 +115,10 @@ function source:complete(_, callback)
+       if item.type then
+         item.kind = kind_map[item.type]
+       end
++      if session.adapter.id == "gdb" then
++        item.text = item.text and string.match(item.text, "[^ ]*$")
++        item.label = item.label and string.match(item.label, "[^ ]*$")
++      end
+       item.insertText = item.text or item.label
+       table.insert(completions, item)
+     end

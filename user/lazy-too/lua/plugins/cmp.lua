@@ -1,3 +1,4 @@
+local from_nix = require("lazy.from-nix")
 return {
   {
     "hrsh7th/nvim-cmp",
@@ -10,7 +11,7 @@ return {
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
       "petertriho/cmp-git",
-      "rcarriga/cmp-dap",
+      "cmp-dap",
     },
     event = { "InsertEnter", "CmdlineEnter" },
     config = function(_, opts)
@@ -118,6 +119,11 @@ return {
   {
     "petertriho/cmp-git",
     opts = {},
+    lazy = true,
+  },
+  {
+    name = "cmp-dap",
+    dir = from_nix.plugins.cmp_dap,
     lazy = true,
   },
 }
