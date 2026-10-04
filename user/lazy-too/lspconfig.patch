@@ -85,20 +85,7 @@ index fc455ec..c5946d8 100644
    },
    cmd = function(dispatchers, config)
 -    local cmd = 'tsgo'
-+    local cmd = '@typescript-go@/bin/tsgo'
++    local cmd = '@typescript@/bin/tsc'
      if (config or {}).root_dir then
        local local_cmd = vim.fs.joinpath(config.root_dir, 'node_modules/.bin', cmd)
        if vim.fn.executable(local_cmd) == 1 then
-diff --git a/lua/lspconfig/configs/rust_analyzer.lua b/lua/lspconfig/configs/rust_analyzer.lua
-index 0b1d3fb..515ebd1 100644
---- a/lua/lspconfig/configs/rust_analyzer.lua
-+++ b/lua/lspconfig/configs/rust_analyzer.lua
-@@ -55,7 +55,7 @@ return {
- 
-       if cargo_crate_dir ~= nil then
-         local cmd = {
--          'cargo',
-+          '@cargo@/bin/cargo',
-           'metadata',
-           '--no-deps',
-           '--format-version',
