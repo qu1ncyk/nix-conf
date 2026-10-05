@@ -385,7 +385,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return hotkey-overlay-title="Open a Terminal: Kitty" { spawn "kitty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: Kitty" { spawn "kitty" "-1"; }
     Mod+D hotkey-overlay-title="Run an Application: Wofi" { spawn "wofi" "--show" "drun"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock" "-c" "000000"; }
 
@@ -644,9 +644,9 @@ binds {
     // which ensures niri always processes them, even when an inhibitor is active.
     Mod+Shift+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Escape {
-        spawn-sh "kitty -e ~/scripts/$(ls -p ~/scripts | grep ^[^\\.\/]*$ | wofi --dmenu)";
+        spawn-sh "kitty -1 -e ~/scripts/$(ls -p ~/scripts | grep ^[^\\.\/]*$ | wofi --dmenu)";
     }
-    Mod+N { spawn "kitty" "-e" "nvim"; }
+    Mod+N { spawn "kitty" "-1" "-e" "nvim"; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
