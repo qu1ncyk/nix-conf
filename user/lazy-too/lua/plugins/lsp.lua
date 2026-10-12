@@ -48,7 +48,18 @@ return {
           },
         },
       })
-      setup_lsp("omnisharp", { cmd = { from_nix.lsp.omnisharp .. "/bin/OmniSharp" } })
+      setup_lsp("omnisharp", {
+        cmd = {
+          from_nix.lsp.omnisharp .. "/bin/OmniSharp",
+          "-z",
+          "--hostPID",
+          tostring(vim.fn.getpid()),
+          "DotNet:enablePackageRestore=false",
+          "--encoding",
+          "utf-8",
+          "--languageserver",
+        },
+      })
       setup_lsp("pyright")
       setup_lsp("rascal_lsp")
       setup_lsp("rust_analyzer", {
