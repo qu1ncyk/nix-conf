@@ -32,7 +32,7 @@
   # environment.
   home.packages = with pkgs; [
     bluetuith
-    docker-credential-helpers
+    (pkgs.callPackage pkgs/docker-credential-helpers-wrapper.nix {})
     dunst
     file
     gimp
