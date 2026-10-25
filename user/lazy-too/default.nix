@@ -112,7 +112,6 @@
         lua_ls = stable-pkgs.lua-language-server;
         nil_ls = pkgs.nil;
         omnisharp = pkgs.omnisharp-roslyn;
-        rascal_lsp = pkgs.callPackage ../../pkgs/rascal-lsp.nix {};
         rust_analyzer = wrapWithPath pkgs.rust-analyzer [pkgs.rustc pkgs.cargo pkgs.rustfmt];
         # unocss = pkgs.unocss;
       };

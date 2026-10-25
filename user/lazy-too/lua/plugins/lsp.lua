@@ -61,7 +61,6 @@ return {
         },
       })
       setup_lsp("pyright")
-      setup_lsp("rascal_lsp")
       setup_lsp("rust_analyzer", {
         settings = {
           ["rust-analyzer"] = {
