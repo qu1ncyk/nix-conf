@@ -38,10 +38,10 @@ index b86289e..23fd59d 100644
        local local_cmd = vim.fs.joinpath(config.root_dir, 'node_modules/.bin', cmd)
        if vim.fn.executable(local_cmd) == 1 then
 diff --git a/lsp/rust_analyzer.lua b/lsp/rust_analyzer.lua
-index 3ac1618..c3e35e0 100644
+index 29f0a7c..9e7a75d 100644
 --- a/lsp/rust_analyzer.lua
 +++ b/lsp/rust_analyzer.lua
-@@ -105,7 +105,7 @@ return {
+@@ -113,7 +113,7 @@ return {
      end
  
      local cmd = {
@@ -64,10 +64,10 @@ index 460f61f..d5fb57b 100644
        local local_cmd = vim.fs.joinpath(config.root_dir, 'node_modules/.bin', cmd)
        if vim.fn.executable(local_cmd) == 1 then
 diff --git a/lsp/ts_ls.lua b/lsp/ts_ls.lua
-index d86a514..1d87838 100644
+index 7c1b9d7..ffcf86d 100644
 --- a/lsp/ts_ls.lua
 +++ b/lsp/ts_ls.lua
-@@ -77,7 +77,7 @@
+@@ -50,7 +50,7 @@
  return {
    init_options = { hostInfo = 'neovim' },
    cmd = function(dispatchers, config)
@@ -76,16 +76,16 @@ index d86a514..1d87838 100644
      if (config or {}).root_dir then
        local local_cmd = vim.fs.joinpath(config.root_dir, 'node_modules/.bin', cmd)
        if vim.fn.executable(local_cmd) == 1 then
-diff --git a/lsp/tsgo.lua b/lsp/tsgo.lua
-index fc455ec..c5946d8 100644
---- a/lsp/tsgo.lua
-+++ b/lsp/tsgo.lua
-@@ -62,7 +62,7 @@ return {
-     },
-   },
-   cmd = function(dispatchers, config)
--    local cmd = 'tsgo'
-+    local cmd = '@typescript@/bin/tsc'
-     if (config or {}).root_dir then
-       local local_cmd = vim.fs.joinpath(config.root_dir, 'node_modules/.bin', cmd)
-       if vim.fn.executable(local_cmd) == 1 then
+diff --git a/lsp/tsc.lua b/lsp/tsc.lua
+index 6818f61..91c7af2 100644
+--- a/lsp/tsc.lua
++++ b/lsp/tsc.lua
+@@ -133,7 +133,7 @@ return {
+ 
+     local bins = {}
+ 
+-    for _, bin in ipairs({ 'tsc', 'tsgo' }) do
++    for _, bin in ipairs({ '@typescript@/bin/tsc' }) do
+       bins[#bins + 1] = vim.fs.joinpath(root, 'node_modules/.bin', bin)
+       bins[#bins + 1] = bin
+     end
