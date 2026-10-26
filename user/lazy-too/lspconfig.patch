@@ -77,9 +77,18 @@ index 7c1b9d7..ffcf86d 100644
        local local_cmd = vim.fs.joinpath(config.root_dir, 'node_modules/.bin', cmd)
        if vim.fn.executable(local_cmd) == 1 then
 diff --git a/lsp/tsc.lua b/lsp/tsc.lua
-index 6818f61..91c7af2 100644
+index 6818f61..65cdb35 100644
 --- a/lsp/tsc.lua
 +++ b/lsp/tsc.lua
+@@ -93,7 +93,7 @@ return {
+     },
+   },
+   cmd = function(dispatchers, config)
+-    local cmd = bin_cache[(config or {}).root_dir] or 'tsc'
++    local cmd = bin_cache[(config or {}).root_dir] or '@typescript@/bin/tsc'
+     return vim.lsp.rpc.start({ cmd, '--lsp', '--stdio' }, dispatchers)
+   end,
+   filetypes = {
 @@ -133,7 +133,7 @@ return {
  
      local bins = {}
