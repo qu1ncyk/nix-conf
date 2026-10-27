@@ -51,7 +51,15 @@
     wl-clipboard-x11
     wl-mirror
     vesktop
-    vlc
+    (pkgs.symlinkJoin {
+      # `video/matroska` is the MIME type of `.mkv` files.
+      # VLC normally only has `video/x-matroska` as supported MIME.
+      name = "VLC with video/matroska";
+      paths = [vlc];
+      postBuild = ''
+        sed 's|\(^MimeType=.*$\)|\1video/matroska|' -i $out/share/applications/vlc.desktop
+      '';
+    })
     xdg-utils
     zip
 
@@ -129,6 +137,8 @@
       enable = true;
       defaultApplications = {
         "application/pdf" = "org.pwmt.zathura.desktop";
+        "video/*" = "vlc.desktop";
+        "image/*" = "imv.desktop";
       };
     };
     autostart = let
