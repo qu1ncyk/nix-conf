@@ -5,7 +5,12 @@
 }: let
   wrapper = writeShellScriptBin "docker-credential-secretservice" ''
     if [ $UID -eq 0 ]; then
-      exec sudo -u quincy ${docker-credential-helpers}/bin/docker-credential-secretservice "$@"
+      SUDO_UID="''${SUDO_UID:-1000}"
+      export DBUS_SESSION_BUS_ADDRESS=''${DBUS_SESSION_BUS_ADDRESS:-"unix:path=/run/user/$SUDO_UID/bus"}
+      exec sudo \
+        --preserve-env=DBUS_SESSION_BUS_ADDRESS \
+        -u "''${SUDO_USER:-quincy}" \
+        ${docker-credential-helpers}/bin/docker-credential-secretservice "$@"
     else
       exec ${docker-credential-helpers}/bin/docker-credential-secretservice "$@"
     fi
