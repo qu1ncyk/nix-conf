@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.file.".config/lf/lfrc".source = ./lfrc;
   home.packages = with pkgs; [
-    (ctpv.override {ueberzug = null;})
+    (ctpv.override {ueberzugpp = null;})
     lf
   ];
 }
