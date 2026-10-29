@@ -38,10 +38,21 @@ index b86289e..23fd59d 100644
        local local_cmd = vim.fs.joinpath(config.root_dir, 'node_modules/.bin', cmd)
        if vim.fn.executable(local_cmd) == 1 then
 diff --git a/lsp/rust_analyzer.lua b/lsp/rust_analyzer.lua
-index 29f0a7c..9e7a75d 100644
+index 29f0a7c..a74bedc 100644
 --- a/lsp/rust_analyzer.lua
 +++ b/lsp/rust_analyzer.lua
-@@ -113,7 +113,7 @@ return {
+@@ -90,10 +90,6 @@ return {
+   cmd = { 'rust-analyzer' },
+   filetypes = { 'rust' },
+   root_dir = function(bufnr, on_dir)
+-    if not executable_exists('cargo') then
+-      return
+-    end
+-
+     local fname = vim.api.nvim_buf_get_name(bufnr)
+     local reused_dir = is_library(fname)
+     if reused_dir then
+@@ -113,7 +109,7 @@ return {
      end
  
      local cmd = {
